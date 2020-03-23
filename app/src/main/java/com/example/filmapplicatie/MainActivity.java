@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        System.out.println("test");
+
 
         Log.d(TAG, "NetworkUtils is called");
         //execute is een methode van een de abstracte klasse Asynchtask
