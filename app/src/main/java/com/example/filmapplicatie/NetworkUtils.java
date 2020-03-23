@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Element>> {
+public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
 
     private OnElementApiListener listener;
     private static String TAG = NetworkUtils.class.getName();
@@ -28,49 +28,50 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Element>> {
         this.listener = onElementApiListener;
     }
 
-    private ArrayList<Element> createElementsFromJson(String response) {
+    private ArrayList<Movie> createElementsFromJson(String response) {
         Log.i(TAG, "createElementFromJson called");
-        ArrayList<Element> elements = new ArrayList<>();
+        ArrayList<Movie> movies = new ArrayList<>();
 
         try {
             JSONObject jsonResults = new JSONObject(response);
-            JSONArray elementList = jsonResults.getJSONArray("features");
+            JSONArray movieList = jsonResults.getJSONArray("results");
             //Json op de site is een string dus personslist.size = index = 0
-            Log.i(TAG, "elementArray length = " + elementList.length());
+            Log.i(TAG, "elementArray length = " + movieList.length());
 
-            for (int i = 0; i < elementList.length(); i++){
+            for (int i = 0; i < movieList.length(); i++){
                 //json object voor het element
-                JSONObject element = elementList.getJSONObject(i);
+                JSONObject movie = movieList.getJSONObject(i);
                 //objecten die worden meegegeven voor de RecyclerView
-                String image = element.getJSONObject("attributes").getString("URL");
-                String title = element.getJSONObject("attributes").getString("AANDUIDINGOBJECT");
-                String geographical_location = element.getJSONObject("attributes").getString("GEOGRAFISCHELIGGING");
-                String identificationNumber = element.getJSONObject("attributes").getString("IDENTIFICATIE");
-                String artist = element.getJSONObject("attributes").getString("KUNSTENAAR");
-                String description = element.getJSONObject("attributes").getString("OMSCHRIJVING");
-                String material = element.getJSONObject("attributes").getString("MATERIAAL");
-                String underground = element.getJSONObject("attributes").getString("ONDERGROND");
-                String placement_date = element.getJSONObject("attributes").getString("PLAATSINGSDATUM");
+                String popularity = movie.getString("popularity");
+                String vote_count = movie.getString("vote_count");
+                String image = movie.getString("poster_path");
+                String identificationNumber = movie.getString("id");
+                String language= movie.getString("original_language");
+                String title = movie.getString("original_title");
+                String vote_average= movie.getString("vote_average");
+                String overview  = movie.getString("overview");
+                String release_date = movie.getString("release_date");
+                //.getJSONObject("attributes").
 
-                String date = getPlaceDate(placement_date);
+                String date = getPlaceDate(release_date);
 
-                Element element_item = new Element(image,
-                        title,
-                        geographical_location,
+                Movie movie_item = new Movie(popularity,
+                        vote_count,
+                        image,
                         identificationNumber,
-                        artist,
-                        description,
-                        material,
-                        underground,
+                        language,
+                        title,
+                        vote_average,
+                        overview,
                         date);
-                elements.add(element_item);
+                movies.add(movie_item);
             }
         } catch (JSONException e) {
             Log.e(TAG, "error " + e.getMessage());
         }
 
-        Log.e(TAG, "number of elements in list =  " + elements.size());
-        return elements;
+        Log.e(TAG, "number of movies in list =  " + movies.size());
+        return movies;
     }
 
     private String doSendRequestToAPI(String urlApiString) {
@@ -157,7 +158,7 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Element>> {
 
     //word opgeroepen na de doInBackground methode
     @Override
-    protected void onPostExecute(ArrayList<Element> response) {
+    protected void onPostExecute(ArrayList<Movie> response) {
         Log.i(TAG, "onPostExecute called");
         Log.i(TAG, "response = " + response);
         //onElementAvailable is een methode van de interface onElementApiListener
@@ -166,7 +167,7 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Element>> {
 
     //word als eerst opgeroepen
     @Override
-    protected ArrayList<Element> doInBackground(String... inputParams) {
+    protected ArrayList<Movie> doInBackground(String... inputParams) {
         Log.i(TAG, "doInBackground called");
         String url = inputParams[0];
         Log.i(TAG, "inputParams = " + url);
@@ -174,13 +175,13 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Element>> {
         String response = null;
         response = doSendRequestToAPI(url);
 
-        ArrayList<Element> elements = createElementsFromJson(response);
+        ArrayList<Movie> movies = createElementsFromJson(response);
 
         Log.i(TAG, "response = " + response);
         Log.i(TAG, "doInBackGround finished");
 
 
-        return elements;
+        return movies;
     }
 
     public String getPlaceDate(String date) {
@@ -198,6 +199,6 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Element>> {
 
     //Main activity en Networkutilsclass kunnen communiceren met elkaar
     public interface OnElementApiListener{
-        public void onElementAvailable(ArrayList<Element> elements);
+        public void onElementAvailable(ArrayList<Movie> movies);
     }
 }

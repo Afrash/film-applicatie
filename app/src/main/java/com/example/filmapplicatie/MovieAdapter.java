@@ -11,17 +11,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
-public class ElementAdapter extends RecyclerView.Adapter<ElementAdapter.ViewHolder> {
+public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
 
     /*RecyclerView.Adapter - om data af te handelen in de collectie en om het aan een view te verbinden zodat het data afhandeld
     LayoutManager - Helps van positioning van items*/
-    private final static String TAG = ElementAdapter.class.getName();
-    private List<Element> mElements;
-    private final ElementOnClickHandler mElementClickHandler;
+    private final static String TAG =MovieAdapter.class.getName();
+    private List<Movie> mMovies;
+    private final ElementOnClickHandler mMovieClicker;
 
-    public ElementAdapter(List<Element> mElements, ElementOnClickHandler mElementClickHandler){
-        this.mElements = mElements;
-        this.mElementClickHandler = mElementClickHandler;
+    public MovieAdapter(List<Movie> mMovies, ElementOnClickHandler mMovieClicker) {
+        this.mMovies = mMovies;
+        this.mMovieClicker = mMovieClicker;
     }
 
     //inflate de item layout en maakt de Holder.
@@ -37,7 +37,7 @@ public class ElementAdapter extends RecyclerView.Adapter<ElementAdapter.ViewHold
         /* maakt een nieuwe view aan
            set xml view*/
         View elementListItem = inflator.inflate(R.layout.element_item, viewGroup, false);
-        ElementAdapter.ViewHolder viewHolder = new ViewHolder(elementListItem);
+        MovieAdapter.ViewHolder viewHolder = new ViewHolder(elementListItem);
 
         return viewHolder;
     }
@@ -46,29 +46,29 @@ public class ElementAdapter extends RecyclerView.Adapter<ElementAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Log.v(TAG, "++++ onBindViewHolder-type: " + holder.getClass().getSimpleName());
-        Element element = mElements.get(position);
+        Movie movie = mMovies.get(position);
 
         Picasso.get()
-                .load(this.mElements.get(position).getImage())
+                .load(this.mMovies.get(position).getImage())
                 .into(holder.image);
 
-        holder.title.setText(mElements.get(position).getTitle());
-        holder.geographical_location.setText(mElements.get(position).getGeographicalLocation());
-        holder.identification_nr.setText(mElements.get(position).getIdentificationNumber());
+        holder.title.setText(mMovies.get(position).getTitle());
+        holder.overview.setText(mMovies.get(position).getOverview());
+        holder.identification_nr.setText(mMovies.get(position).getIdentificationNumber());
     }
 
     //bepaald het nummer van elementen in de lijst
     @Override
     public int getItemCount() {
-        Log.v(TAG, "item count in Adapter = " + mElements.size());
-        return mElements.size();
+        Log.v(TAG, "item count in Adapter = " + mMovies.size());
+        return mMovies.size();
     }
 
     //met ViewHolder kan je bijhouden wat er gebeurd in je scherm
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView image;
         private TextView title;
-        private TextView geographical_location;
+        private TextView overview;
         private TextView identification_nr;
 
         //geeft attributen aan XML
@@ -77,12 +77,12 @@ public class ElementAdapter extends RecyclerView.Adapter<ElementAdapter.ViewHold
 
             image = (ImageView) itemView.findViewById(R.id.element_item_imageview);
             title = (TextView) itemView.findViewById(R.id.element_title);
-            geographical_location = (TextView) itemView.findViewById(R.id.geographic_location);
+            overview = (TextView) itemView.findViewById(R.id.overview);
             identification_nr = (TextView) itemView.findViewById(R.id.identification_nr);
             //setOnClickListeners
             image.setOnClickListener(this);
             title.setOnClickListener(this);
-            geographical_location.setOnClickListener(this);
+            overview.setOnClickListener(this);
             itemView.setOnClickListener(this);
         }
 
@@ -91,7 +91,7 @@ public class ElementAdapter extends RecyclerView.Adapter<ElementAdapter.ViewHold
         public void onClick(View view) {
             Log.v(ViewHolder.class.getName(), "clicked on item");
             int itemIndex = getAdapterPosition();
-            mElementClickHandler.onElementClick(view, itemIndex);
+            mMovieClicker.onElementClick(view, itemIndex);
         }
     }
 }

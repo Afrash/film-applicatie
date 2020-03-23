@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
 
     private static String TAG = MainActivity.class.getName();
 
-    ArrayList<Element> mElements = new ArrayList<>();
+    ArrayList<Movie> mMovies = new ArrayList<>();
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         setContentView(R.layout.activity_main);
 
 
-        String url = "https://services7.arcgis.com/21GdwfcLrnTpiju8/arcgis/rest/services/Sierende_elementen/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json";
+        String url = "https://api.themoviedb.org/3/discover/movie?api_key=b6f53c81e5115a4f1b13c9f2e25785a0";
 
         NetworkUtils networkUtils = new NetworkUtils(this);
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         mRecyclerView.addItemDecoration(new DividerItemDecoration(mRecyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
         //// Create adapter passing in the elements data
-        mAdapter = new ElementAdapter(mElements, this);
+        mAdapter = new MovieAdapter(mMovies, this);
         // Attach the adapter to the recyclerview to populate items
         mRecyclerView.setAdapter(mAdapter);
         // Set layout manager to position the items
@@ -60,14 +60,14 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
     }
 
     @Override
-    public void onElementAvailable(ArrayList<Element> elements) {
+    public void onElementAvailable(ArrayList<Movie> elements) {
         Log.i(TAG, "elements = " + elements.toString());
-        mElements.clear();
-        mElements.addAll(elements);
-        Log.i(TAG, "size of arrayList = " + mElements.size());
+        mMovies.clear();
+        mMovies.addAll(elements);
+        Log.i(TAG, "size of arrayList = " + mMovies.size());
         mAdapter.notifyDataSetChanged();
         //gives amount of elements
-        Toast.makeText(getApplicationContext(), "Amount of elements: " + this.mElements.size()
+        Toast.makeText(getApplicationContext(), "Amount of movies: " + this.mMovies.size()
                 , Toast.LENGTH_LONG).show();
     }
 
@@ -82,27 +82,29 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         Log.d(TAG, "create variables to give to other class");
 
         //pakt data van element en kan het dan geven aan andere activiteit
-        String title = this.mElements.get(itemIndex).getTitle();
-        String geographical_location = this.mElements.get(itemIndex).getGeographicalLocation();
-        String image = this.mElements.get(itemIndex).getImage();
-        String artist = this.mElements.get(itemIndex).getArtist();
-        String description = this.mElements.get(itemIndex).getDescription();
-        String material = this.mElements.get(itemIndex).getMaterial();
-        String underground = this.mElements.get(itemIndex).getUnderground();
-        String placement_date = this.mElements.get(itemIndex).getPlacement_date();
-
-        //stop het in de intent zodat je de data kan krijgen in de andere class
-        intent.putExtra("TITLE", title);
-        intent.putExtra("GEOGRAPHICAL_LOCATION", geographical_location);
-        intent.putExtra("IMAGE", image);
-        intent.putExtra("ARTIST", artist);
-        intent.putExtra("DESCRIPTION", description);
-        intent.putExtra("MATERIAL", material);
-        intent.putExtra("UNDERGROUND", underground);
-        intent.putExtra("PLACEMENT_DATE", placement_date);
+//        String title = this.mElements.get(itemIndex).getTitle();
+//        String geographical_location = this.mElements.get(itemIndex).getGeographicalLocation();
+//        String image = this.mElements.get(itemIndex).getImage();
+//        String artist = this.mElements.get(itemIndex).getArtist();
+//        String description = this.mElements.get(itemIndex).getDescription();
+//        String material = this.mElements.get(itemIndex).getMaterial();
+//        String underground = this.mElements.get(itemIndex).getUnderground();
+//        String placement_date = this.mElements.get(itemIndex).getPlacement_date();
+//
+//        //stop het in de intent zodat je de data kan krijgen in de andere class
+//        intent.putExtra("TITLE", title);
+//        intent.putExtra("GEOGRAPHICAL_LOCATION", geographical_location);
+//        intent.putExtra("IMAGE", image);
+//        intent.putExtra("ARTIST", artist);
+//        intent.putExtra("DESCRIPTION", description);
+//        intent.putExtra("MATERIAL", material);
+//        intent.putExtra("UNDERGROUND", underground);
+//        intent.putExtra("PLACEMENT_DATE", placement_date);
 
         Log.d(TAG, "start activity");
         startActivity(intent);
 
     }
+
+
 }
