@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         Log.d(TAG, "Starting onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("hallo Afrash");
+        System.out.println("Werkt dit");
 
         String url = "https://services7.arcgis.com/21GdwfcLrnTpiju8/arcgis/rest/services/Sierende_elementen/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json";
 
