@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">film applicatie</string>
+
+    <string name="summary_text">Summary</string>
+    <string name="genre_text">Genre</string>
+    <string name="language_text">Language</string>
+    <string name="eighteenPlus_text">18+</string>
+    <string name="releaseDate_text">Release date</string>
+    <string name="runtime_text">Runtime</string>
+    <string name="budget_text">Budget</string>
+    <string name="revenue_text">Revenue</string>
 </resources>
