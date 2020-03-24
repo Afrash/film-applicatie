@@ -17,7 +17,7 @@ import android.widget.Toast;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements NetworkUtils.OnElementApiListener
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,NetworkUtils.OnElementApiListener
         ,MovieOnClickHandler {
 
     private static String TAG = MainActivity.class.getName();
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         setContentView(R.layout.activity_main);
         searchEditText = (EditText) findViewById(R.id.searchEditText);
         searchButton = (Button) findViewById(R.id.searchButton);
-
+        searchButton.setOnClickListener(this);
 
         String url = "https://api.themoviedb.org/3/discover/movie?api_key=b6f53c81e5115a4f1b13c9f2e25785a0";
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         //execute is een methode van een de abstracte klasse Asynchtask
         networkUtils.execute(url);
     }
-
+@Override
     public void onClick(View v) {
 
         // dit pakt de query die ik zelf intik in de searchbar en geef het aan de buildURL(van de class NetworkUtils) zodat het de hele URL bouwt.

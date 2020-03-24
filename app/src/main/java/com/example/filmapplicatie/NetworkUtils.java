@@ -35,7 +35,7 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
 
 
 
-    final static String PARAM_APIKEY = "api_key";
+    final static String PARAM_APIKEY = "?api_key";
     final static String apiKey = "b6f53c81e5115a4f1b13c9f2e25785a0";
 
 
