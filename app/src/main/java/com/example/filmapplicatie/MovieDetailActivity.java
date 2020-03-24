@@ -15,13 +15,13 @@ public class MovieDetailActivity extends AppCompatActivity {
     private static String TAG = MovieDetailActivity.class.getName();
 
     private ImageView image;
-    private TextView geographical_location;
+    private TextView language;
     private TextView title;
-    private TextView artist;
-    private TextView description;
-    private TextView material;
-    private TextView underground;
-    private TextView placement_date;
+    private TextView vote_Count;
+    private TextView vote_Average;
+    private TextView overview;
+    private TextView release_date;
+    private TextView identificationNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,27 +42,29 @@ public class MovieDetailActivity extends AppCompatActivity {
 //        Log.i(TAG, "retrieve intent");
 //        Intent intent = getIntent();
 //
+//
 //        String mTitle = intent.getExtras().getString("TITLE");
 //        String mImage = intent.getExtras().getString("IMAGE");
-//        String mGeographical_location = intent.getExtras().getString("GEOGRAPHICAL_LOCATION");
-//        String mArtist = intent.getExtras().getString("ARTIST");
-//        String mDescription = intent.getExtras().getString("DESCRIPTION");
-//        String mMaterial = intent.getExtras().getString("MATERIAL");
-//        String mUnderground = intent.getExtras().getString("UNDERGROUND");
-//        String mPlacementDate = intent.getExtras().getString("PLACEMENT_DATE");
+//        String mLanguage = intent.getExtras().getString("LANGUAGE");
+//        String mVote_count = intent.getExtras().getString("VOTE_COUNT");
+//        String mVote_average = intent.getExtras().getString("VOTE_AVERAGE");
+//        String mOverview = intent.getExtras().getString("OVERVIEW");
+//        String mRelease_date = intent.getExtras().getString("RELEASE_DATE");
+//        String mPopularity = intent.getExtras().getString("POPULARITY");
+//        String identificationNumber = intent.getExtras().getString("IDENTIFICATIONNUMBER");
 
         //set the image
 //        Picasso.get()
 //                .load(mImage)
 //                .into(image);
 //
-//        geographical_location.setText(mGeographical_location);
+//       language.setText(mLanguage);
 //        title.setText(mTitle);
-//        artist.setText(mArtist);
-//        description.setText(mDescription);
-//        material.setText(mMaterial);
-//        underground.setText(mUnderground);
-//        placement_date.setText(mPlacementDate);
+//        vote_Count.setText(mVote_count);
+//        vote_Average.setText(mVote_average);
+//        overview.setText(mOverview);
+//        release_date.setText(mRelease_date);
+//        identificationNumber.setText(mIdentificationNumber);
 
     }
 }
