@@ -17,9 +17,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     LayoutManager - Helps van positioning van items*/
     private final static String TAG =MovieAdapter.class.getName();
     private List<Movie> mMovies;
-    private final ElementOnClickHandler mMovieClicker;
+    private final MovieOnClickHandler mMovieClicker;
 
-    public MovieAdapter(List<Movie> mMovies, ElementOnClickHandler mMovieClicker) {
+    public MovieAdapter(List<Movie> mMovies, MovieOnClickHandler mMovieClicker) {
         this.mMovies = mMovies;
         this.mMovieClicker = mMovieClicker;
     }

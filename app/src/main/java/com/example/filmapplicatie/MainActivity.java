@@ -9,15 +9,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NetworkUtils.OnElementApiListener
-        ,ElementOnClickHandler {
+        , MovieOnClickHandler {
 
     private static String TAG = MainActivity.class.getName();
 
@@ -77,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         Log.d(TAG, "create intent");
 
         //je zegt over welke activity de intent gaat voor de startActivity
-        Intent intent = new Intent(getApplicationContext(), ElementDetailActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MovieDetailActivity.class);
 
         Log.d(TAG, "create variables to give to other class");
 
