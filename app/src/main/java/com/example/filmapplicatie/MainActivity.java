@@ -82,24 +82,27 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         Log.d(TAG, "create variables to give to other class");
 
         //pakt data van element en kan het dan geven aan andere activiteit
-//        String title = this.mElements.get(itemIndex).getTitle();
-//        String geographical_location = this.mElements.get(itemIndex).getGeographicalLocation();
-//        String image = this.mElements.get(itemIndex).getImage();
-//        String artist = this.mElements.get(itemIndex).getArtist();
-//        String description = this.mElements.get(itemIndex).getDescription();
-//        String material = this.mElements.get(itemIndex).getMaterial();
-//        String underground = this.mElements.get(itemIndex).getUnderground();
-//        String placement_date = this.mElements.get(itemIndex).getPlacement_date();
+        String title = this.mMovies.get(itemIndex).getTitle();
+        String popularity = this.mMovies.get(itemIndex).getPopularity();
+        String image = this.mMovies.get(itemIndex).getImage();
+        String vote_count = this.mMovies.get(itemIndex).getVote_count();
+        String vote_average = this.mMovies.get(itemIndex).getVote_average();
+        String overview = this.mMovies.get(itemIndex).getOverview();
+        String language = this.mMovies.get(itemIndex).getLanguage();
+        String identificationNumber = this.mMovies.get(itemIndex).getIdentificationNumber();
+        String release_date = this.mMovies.get(itemIndex).getRelease_date();
 //
 //        //stop het in de intent zodat je de data kan krijgen in de andere class
-//        intent.putExtra("TITLE", title);
-//        intent.putExtra("GEOGRAPHICAL_LOCATION", geographical_location);
-//        intent.putExtra("IMAGE", image);
-//        intent.putExtra("ARTIST", artist);
-//        intent.putExtra("DESCRIPTION", description);
-//        intent.putExtra("MATERIAL", material);
-//        intent.putExtra("UNDERGROUND", underground);
-//        intent.putExtra("PLACEMENT_DATE", placement_date);
+        intent.putExtra("IMAGE", image);
+        intent.putExtra("TITLE", title);
+        intent.putExtra("POPULARITY", popularity);
+        intent.putExtra("VOTE_COUNT", vote_count);
+        intent.putExtra("VOTE_AVERAGE", vote_average);
+        intent.putExtra("OVERVIEW", overview);
+        intent.putExtra("LANGUAGE", language);
+        intent.putExtra("IDENTIFICATIONNUMBER", identificationNumber);
+        intent.putExtra("RELEASE_DATE", release_date);
+
 
         Log.d(TAG, "start activity");
         startActivity(intent);
