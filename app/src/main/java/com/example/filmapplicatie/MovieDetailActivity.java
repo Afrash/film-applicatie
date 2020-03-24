@@ -30,7 +30,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         Log.i(TAG, "Activity is started");
 
-//started        image = findViewById(R.id.image_detail);
+          image = findViewById(R.id.poster_imageview);
 //        geographical_location = findViewById(R.id.geographical_location_detail);
 //        title = findViewById(R.id.title_detail);
 //        artist = findViewById(R.id.artist_detail);
@@ -40,11 +40,11 @@ public class MovieDetailActivity extends AppCompatActivity {
 //        placement_date = findViewById(R.id.placement_date_detail);
 //
 //        Log.i(TAG, "retrieve intent");
-//        Intent intent = getIntent();
+        Intent intent = getIntent();
 //
 //
 //        String mTitle = intent.getExtras().getString("TITLE");
-//        String mImage = intent.getExtras().getString("IMAGE");
+        String mImage = intent.getExtras().getString("IMAGE");
 //        String mLanguage = intent.getExtras().getString("LANGUAGE");
 //        String mVote_count = intent.getExtras().getString("VOTE_COUNT");
 //        String mVote_average = intent.getExtras().getString("VOTE_AVERAGE");
@@ -54,9 +54,10 @@ public class MovieDetailActivity extends AppCompatActivity {
 //        String identificationNumber = intent.getExtras().getString("IDENTIFICATIONNUMBER");
 
         //set the image
-//        Picasso.get()
-//                .load(mImage)
-//                .into(image);
+        Picasso.get()
+                .load("https://image.tmdb.org/t/p/w500" + mImage)
+                .into(image);
+
 //
 //       language.setText(mLanguage);
 //        title.setText(mTitle);

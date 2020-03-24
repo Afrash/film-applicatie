@@ -14,9 +14,8 @@
 
         <ImageView
             android:id="@+id/poster_imageview"
-            android:layout_width="wrap_content"
-            android:layout_height="300dp">
-        </ImageView>
+            android:layout_width="match_parent"
+            android:layout_height="300dp"></ImageView>
 
         <TextView
             android:id="@+id/movie_title_in"
