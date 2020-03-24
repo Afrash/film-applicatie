@@ -48,9 +48,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         Log.v(TAG, "++++ onBindViewHolder-type: " + holder.getClass().getSimpleName());
         Movie movie = mMovies.get(position);
 
+
         Picasso.get()
-                .load(this.mMovies.get(position).getImage())
+                .load("https://image.tmdb.org/t/p/w500" + this.mMovies.get(position).getImage())
                 .into(holder.image);
+        Log.v(TAG, "Data in image: " + this.mMovies.get(position).getImage());
+
+
 
         holder.title.setText(mMovies.get(position).getTitle());
         holder.overview.setText(mMovies.get(position).getOverview());

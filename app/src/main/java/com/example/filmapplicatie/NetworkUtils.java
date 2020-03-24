@@ -36,7 +36,7 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
             JSONObject jsonResults = new JSONObject(response);
             JSONArray movieList = jsonResults.getJSONArray("results");
             //Json op de site is een string dus personslist.size = index = 0
-            Log.i(TAG, "elementArray length = " + movieList.length());
+            Log.i(TAG, "moviesArray length = " + movieList.length());
 
             for (int i = 0; i < movieList.length(); i++){
                 //json object voor het element
