@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.net.URL;
@@ -22,7 +23,9 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
     private static String TAG = MainActivity.class.getName();
 
     ArrayList<Movie> mMovies = new ArrayList<>();
-
+    private EditText searchEditText;
+    private Button searchButton;
+    private TextView wholeText;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         Log.d(TAG, "Starting onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        searchEditText = (EditText) findViewById(R.id.searchEditText);
+        searchButton = (Button) findViewById(R.id.searchButton);
 
 
         String url = "https://api.themoviedb.org/3/discover/movie?api_key=b6f53c81e5115a4f1b13c9f2e25785a0";
@@ -59,6 +64,21 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         networkUtils.execute(url);
     }
 
+    public void onClick(View v) {
+
+        // dit pakt de query die ik zelf intik in de searchbar en geef het aan de buildURL(van de class NetworkUtils) zodat het de hele URL bouwt.
+        String bolQuery = searchEditText.getText().toString();
+        URL bolSearchURL = NetworkUtils.buildURL(bolQuery);
+
+        Log.i(TAG, "onClick is called");
+        NetworkUtils networkingTask = new NetworkUtils(this);
+
+        //String url = bolSearchURL.toString();
+
+        //execute is een methode van een de abstracte klasse Asynchtask
+        networkingTask.execute(bolSearchURL.toString());
+    }
+
     @Override
     public void onElementAvailable(ArrayList<Movie> elements) {
         Log.i(TAG, "elements = " + elements.toString());
@@ -82,24 +102,27 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         Log.d(TAG, "create variables to give to other class");
 
         //pakt data van element en kan het dan geven aan andere activiteit
-//        String title = this.mElements.get(itemIndex).getTitle();
-//        String geographical_location = this.mElements.get(itemIndex).getGeographicalLocation();
-//        String image = this.mElements.get(itemIndex).getImage();
-//        String artist = this.mElements.get(itemIndex).getArtist();
-//        String description = this.mElements.get(itemIndex).getDescription();
-//        String material = this.mElements.get(itemIndex).getMaterial();
-//        String underground = this.mElements.get(itemIndex).getUnderground();
-//        String placement_date = this.mElements.get(itemIndex).getPlacement_date();
+        String title = this.mMovies.get(itemIndex).getTitle();
+        String popularity = this.mMovies.get(itemIndex).getPopularity();
+        String image = this.mMovies.get(itemIndex).getImage();
+        String vote_count = this.mMovies.get(itemIndex).getVote_count();
+        String vote_average = this.mMovies.get(itemIndex).getVote_average();
+        String overview = this.mMovies.get(itemIndex).getOverview();
+        String language = this.mMovies.get(itemIndex).getLanguage();
+        String identificationNumber = this.mMovies.get(itemIndex).getIdentificationNumber();
+        String release_date = this.mMovies.get(itemIndex).getRelease_date();
 //
 //        //stop het in de intent zodat je de data kan krijgen in de andere class
-//        intent.putExtra("TITLE", title);
-//        intent.putExtra("GEOGRAPHICAL_LOCATION", geographical_location);
-//        intent.putExtra("IMAGE", image);
-//        intent.putExtra("ARTIST", artist);
-//        intent.putExtra("DESCRIPTION", description);
-//        intent.putExtra("MATERIAL", material);
-//        intent.putExtra("UNDERGROUND", underground);
-//        intent.putExtra("PLACEMENT_DATE", placement_date);
+        intent.putExtra("IMAGE", image);
+        intent.putExtra("TITLE", title);
+        intent.putExtra("POPULARITY", popularity);
+        intent.putExtra("VOTE_COUNT", vote_count);
+        intent.putExtra("VOTE_AVERAGE", vote_average);
+        intent.putExtra("OVERVIEW", overview);
+        intent.putExtra("LANGUAGE", language);
+        intent.putExtra("IDENTIFICATIONNUMBER", identificationNumber);
+        intent.putExtra("RELEASE_DATE", release_date);
+
 
         Log.d(TAG, "start activity");
         startActivity(intent);

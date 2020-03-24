@@ -30,39 +30,39 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         Log.i(TAG, "Activity is started");
 
-        image = findViewById(R.id.image_detail);
-        geographical_location = findViewById(R.id.geographical_location_detail);
-        title = findViewById(R.id.title_detail);
-        artist = findViewById(R.id.artist_detail);
-        description = findViewById(R.id.description_detail);
-        material = findViewById(R.id.material_detail);
-        underground = findViewById(R.id.underground_detail);
-        placement_date = findViewById(R.id.placement_date_detail);
-
-        Log.i(TAG, "retrieve intent");
-        Intent intent = getIntent();
-
-        String mTitle = intent.getExtras().getString("TITLE");
-        String mImage = intent.getExtras().getString("IMAGE");
-        String mGeographical_location = intent.getExtras().getString("GEOGRAPHICAL_LOCATION");
-        String mArtist = intent.getExtras().getString("ARTIST");
-        String mDescription = intent.getExtras().getString("DESCRIPTION");
-        String mMaterial = intent.getExtras().getString("MATERIAL");
-        String mUnderground = intent.getExtras().getString("UNDERGROUND");
-        String mPlacementDate = intent.getExtras().getString("PLACEMENT_DATE");
+//started        image = findViewById(R.id.image_detail);
+//        geographical_location = findViewById(R.id.geographical_location_detail);
+//        title = findViewById(R.id.title_detail);
+//        artist = findViewById(R.id.artist_detail);
+//        description = findViewById(R.id.description_detail);
+//        material = findViewById(R.id.material_detail);
+//        underground = findViewById(R.id.underground_detail);
+//        placement_date = findViewById(R.id.placement_date_detail);
+//
+//        Log.i(TAG, "retrieve intent");
+//        Intent intent = getIntent();
+//
+//        String mTitle = intent.getExtras().getString("TITLE");
+//        String mImage = intent.getExtras().getString("IMAGE");
+//        String mGeographical_location = intent.getExtras().getString("GEOGRAPHICAL_LOCATION");
+//        String mArtist = intent.getExtras().getString("ARTIST");
+//        String mDescription = intent.getExtras().getString("DESCRIPTION");
+//        String mMaterial = intent.getExtras().getString("MATERIAL");
+//        String mUnderground = intent.getExtras().getString("UNDERGROUND");
+//        String mPlacementDate = intent.getExtras().getString("PLACEMENT_DATE");
 
         //set the image
-        Picasso.get()
-                .load(mImage)
-                .into(image);
-
-        geographical_location.setText(mGeographical_location);
-        title.setText(mTitle);
-        artist.setText(mArtist);
-        description.setText(mDescription);
-        material.setText(mMaterial);
-        underground.setText(mUnderground);
-        placement_date.setText(mPlacementDate);
+//        Picasso.get()
+//                .load(mImage)
+//                .into(image);
+//
+//        geographical_location.setText(mGeographical_location);
+//        title.setText(mTitle);
+//        artist.setText(mArtist);
+//        description.setText(mDescription);
+//        material.setText(mMaterial);
+//        underground.setText(mUnderground);
+//        placement_date.setText(mPlacementDate);
 
     }
 }
