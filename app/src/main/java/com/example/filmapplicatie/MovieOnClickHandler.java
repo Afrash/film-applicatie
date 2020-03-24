@@ -2,6 +2,6 @@ package com.example.filmapplicatie;
 
 import android.view.View;
 
-public interface ElementOnClickHandler {
+public interface MovieOnClickHandler {
     void onElementClick(View view, int itemIndex);
 }

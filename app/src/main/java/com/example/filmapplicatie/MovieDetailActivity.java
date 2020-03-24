@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-public class ElementDetailActivity extends AppCompatActivity {
+public class MovieDetailActivity extends AppCompatActivity {
 
-    private static String TAG = ElementDetailActivity.class.getName();
+    private static String TAG = MovieDetailActivity.class.getName();
 
     private ImageView image;
     private TextView geographical_location;
