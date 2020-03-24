@@ -65,10 +65,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 @Override
     public void onClick(View v) {
-
         // dit pakt de query die ik zelf intik in de searchbar en geef het aan de buildURL(van de class NetworkUtils) zodat het de hele URL bouwt.
         String bolQuery = searchEditText.getText().toString();
+
+
+
         URL bolSearchURL = NetworkUtils.buildURL(bolQuery);
+        Log.i(TAG, "This is in the SearchURL " + bolQuery);
 
         Log.i(TAG, "onClick is called");
         NetworkUtils networkingTask = new NetworkUtils(this);

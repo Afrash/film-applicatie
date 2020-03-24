@@ -203,6 +203,8 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
     protected ArrayList<Movie> doInBackground(String... inputParams) {
         Log.i(TAG, "doInBackground called");
         String url = inputParams[0];
+        url = url.replace("%3D", "");
+        url = url.replace("%3F", "");
         Log.i(TAG, "inputParams = " + url);
 
         String response = null;
