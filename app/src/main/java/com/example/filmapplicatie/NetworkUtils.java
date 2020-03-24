@@ -32,9 +32,6 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
 //?api_key=b6f53c81e5115a4f1b13c9f2e25785a0&language=en-US&page=1&include_adult=false
     final static String TMDB_BASE_URL = "https://api.themoviedb.org/3/search/movie";
     final static String PARAM_QUERY = "query=";
-
-
-
     final static String PARAM_APIKEY = "?api_key";
     final static String apiKey = "b6f53c81e5115a4f1b13c9f2e25785a0";
 
