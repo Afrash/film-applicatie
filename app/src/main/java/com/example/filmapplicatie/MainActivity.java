@@ -1,16 +1,15 @@
 package com.example.filmapplicatie;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.net.URL;
@@ -22,7 +21,9 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
     private static String TAG = MainActivity.class.getName();
 
     ArrayList<Movie> mMovies = new ArrayList<>();
-
+    private EditText searchEditText;
+    private Button searchButton;
+    private TextView wholeText;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -57,6 +58,21 @@ public class MainActivity extends AppCompatActivity implements NetworkUtils.OnEl
         Log.d(TAG, "NetworkUtils is called");
         //execute is een methode van een de abstracte klasse Asynchtask
         networkUtils.execute(url);
+    }
+@Override
+    public void onClick(View v) {
+
+        // dit pakt de query die ik zelf intik in de searchbar en geef het aan de buildURL(van de class NetworkUtils) zodat het de hele URL bouwt.
+        String movieQuery = searchEditText.getText().toString();
+        URL bolSearchURL = NetworkUtils.buildURL(movieQuery);
+
+        Log.i(TAG, "onClick is called");
+        NetworkUtils networkingTask = new NetworkUtils(this);
+
+        //String url = bolSearchURL.toString();
+
+        //execute is een methode van een de abstracte klasse Asynchtask
+        networkingTask.execute(bolSearchURL.toString());
     }
 
     @Override

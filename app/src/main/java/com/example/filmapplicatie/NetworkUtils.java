@@ -1,5 +1,6 @@
 package com.example.filmapplicatie;
 
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 import org.json.JSONArray;
@@ -23,10 +24,42 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
     private OnElementApiListener listener;
     private static String TAG = NetworkUtils.class.getName();
 
+
     public NetworkUtils(OnElementApiListener onElementApiListener){
         Log.i(TAG, "Constructor is called");
         this.listener = onElementApiListener;
     }
+//?api_key=b6f53c81e5115a4f1b13c9f2e25785a0&language=en-US&page=1&include_adult=false
+    final static String TMDB_BASE_URL = "https://api.themoviedb.org/3/search/movie";
+    final static String PARAM_QUERY = "query=";
+
+
+
+    final static String PARAM_APIKEY = "api_key";
+    final static String apiKey = "b6f53c81e5115a4f1b13c9f2e25785a0";
+
+
+
+    //bouwd de URL om github te query
+    public static URL buildURL(String movieSearchQuery){
+        //eerst word de Uri gemaakt
+        Uri builtUri = Uri.parse(TMDB_BASE_URL).buildUpon()
+                .appendQueryParameter(PARAM_APIKEY, apiKey)
+                .appendQueryParameter(PARAM_QUERY, movieSearchQuery)
+                .build();
+
+        //hier maak je een URL van de Uri
+        URL url = null;
+        try {
+            url = new URL(builtUri.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        return url;
+    }
+
+
 
     private ArrayList<Movie> createElementsFromJson(String response) {
         Log.i(TAG, "createElementFromJson called");
