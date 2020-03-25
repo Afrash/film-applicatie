@@ -3,6 +3,8 @@
 
     <group
         android:checkableBehavior="single">
+        <item android:id="@+id/menu_sort_alphabetical"
+            android:title="@string/sortAlphabetically_text"/>
         <item android:id="@+id/menu_sort_most_popular"
             android:title="@string/sortMostPopular_text"/>
         <item android:id="@+id/menu_sort_least_popular"

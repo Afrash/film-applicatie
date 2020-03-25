@@ -10,6 +10,7 @@
     <string name="budget_text">Budget</string>
     <string name="revenue_text">Revenue</string>
 
+    <string name="sortAlphabetically_text">Alphabetical</string>
     <string name="sortMostPopular_text">Most Popular</string>
     <string name="sortLeastPopular_text">Least Popular</string>
 </resources>
