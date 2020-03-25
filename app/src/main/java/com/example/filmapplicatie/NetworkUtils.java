@@ -59,6 +59,11 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
 
 
     private ArrayList<Movie> createElementsFromJson(String response) {
+        //TODO moet genre opgehaald worden en in detail activity gezet worden dus 2de scherm.
+        //TODO runtime moet opgehaald worden/duration en ook in detail activity komen.
+        //TODO moviebudget moet opgehaald worden/duration en ook in detail activity komen.
+        //TODO movieRevenue moet opgehaald worden/duration en ook in detail activity komen.
+
         Log.i(TAG, "createElementFromJson called");
         ArrayList<Movie> movies = new ArrayList<>();
 

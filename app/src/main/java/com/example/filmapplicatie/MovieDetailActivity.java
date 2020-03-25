@@ -30,26 +30,28 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         Log.i(TAG, "Activity is started");
 
-          image = findViewById(R.id.poster_imageview);
-//        geographical_location = findViewById(R.id.geographical_location_detail);
-//        title = findViewById(R.id.title_detail);
-//        artist = findViewById(R.id.artist_detail);
-//        description = findViewById(R.id.description_detail);
-//        material = findViewById(R.id.material_detail);
-//        underground = findViewById(R.id.underground_detail);
-//        placement_date = findViewById(R.id.placement_date_detail);
+        image = findViewById(R.id.poster_imageview);
+        language = findViewById(R.id.movie_language_in);
+        title = findViewById(R.id.movie_title_in);
+//        vote_Count = findViewById(R.id.artist_detail);
+//        vote_Average = findViewById(R.id.description_detail);
+        //TODO kijken wat we hiermee gaan doen met deze 2.
+        overview = findViewById(R.id.movie_summary_in);
+        release_date = findViewById(R.id.movie_releaseDate);
+        //identificationNumber = findViewById(R.id.placement_date_detail);
 //
 //        Log.i(TAG, "retrieve intent");
         Intent intent = getIntent();
 //
-//
-//        String mTitle = intent.getExtras().getString("TITLE");
+
+        //TODO Genre moet hier ook in komen.
+        String mTitle = intent.getExtras().getString("TITLE");
         String mImage = intent.getExtras().getString("IMAGE");
-//        String mLanguage = intent.getExtras().getString("LANGUAGE");
+        String mLanguage = intent.getExtras().getString("LANGUAGE");
 //        String mVote_count = intent.getExtras().getString("VOTE_COUNT");
 //        String mVote_average = intent.getExtras().getString("VOTE_AVERAGE");
-//        String mOverview = intent.getExtras().getString("OVERVIEW");
-//        String mRelease_date = intent.getExtras().getString("RELEASE_DATE");
+        String mOverview = intent.getExtras().getString("OVERVIEW");
+        String mRelease_date = intent.getExtras().getString("RELEASE_DATE");
 //        String mPopularity = intent.getExtras().getString("POPULARITY");
 //        String identificationNumber = intent.getExtras().getString("IDENTIFICATIONNUMBER");
 
@@ -59,13 +61,13 @@ public class MovieDetailActivity extends AppCompatActivity {
                 .into(image);
 
 //
-//       language.setText(mLanguage);
-//        title.setText(mTitle);
+       language.setText(mLanguage);
+        title.setText(mTitle);
 //        vote_Count.setText(mVote_count);
 //        vote_Average.setText(mVote_average);
-//        overview.setText(mOverview);
-//        release_date.setText(mRelease_date);
-//        identificationNumber.setText(mIdentificationNumber);
+        overview.setText(mOverview);
+        release_date.setText(mRelease_date);
+//        identificationNumber.setText(identificationNumber);
 
     }
 }
