@@ -9,4 +9,7 @@
     <string name="runtime_text">Runtime</string>
     <string name="budget_text">Budget</string>
     <string name="revenue_text">Revenue</string>
+
+    <string name="sortMostPopular_text">Most Popular</string>
+    <string name="sortLeastPopular_text">Least Popular</string>
 </resources>
