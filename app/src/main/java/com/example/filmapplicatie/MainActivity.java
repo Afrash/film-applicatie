@@ -9,9 +9,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,6 +73,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getMenuInflater().inflate(R.menu.film_menu, menu);
         return true;
     }
+
+//    public void onRadioButtonClicked(MenuItem item){
+//        Log.i(TAG, "onRadioButtonClicked was called");
+//
+//        boolean checked = ((RadioButton) item).isChecked();
+//
+//        switch (item.getItemId()){
+//            case R.id.menu_sort_alphabetical:
+//                if(checked)
+//                    //Sort alphabetically
+//                break;
+//            case R.id.menu_sort_most_popular:
+//                if(checked)
+//                    //Sort most popular
+//                break;
+//            case R.id.menu_sort_least_popular:
+//                if(checked)
+//                    //Sort by least popular
+//                break;
+//        }
+//    }
 
 @Override
     public void onClick(View v) {
