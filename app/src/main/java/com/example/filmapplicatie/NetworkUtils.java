@@ -112,7 +112,6 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                         .replace("10752", "War")
                         .replace("37", "Western")
                         ;
-                String date = getPlaceDate(release_date);
 
                 Movie movie_item = new Movie(popularity,
                         vote_count,
@@ -122,7 +121,7 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                         title,
                         vote_average,
                         overview,
-                        date,
+                        release_date,
                         text);
                 movies.add(movie_item);
 
@@ -250,18 +249,6 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
         return movies;
     }
 
-    public String getPlaceDate(String date) {
-        Log.i(TAG, "change Date");
-        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(Long.parseLong(date));
-            String currentTime = formatter.format(calendar.getTime());
-            return currentTime;
-        } catch (Exception e){
-            return "Geen data beschikbaar";
-        }
-    }
 
     //Main activity en Networkutilsclass kunnen communiceren met elkaar
     public interface OnElementApiListener{
