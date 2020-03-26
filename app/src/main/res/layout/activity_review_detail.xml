@@ -6,6 +6,13 @@
 
 
     <TextView
+        android:id="@+id/Movie_title_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+    <TextView
         android:id="@+id/review_detail_textview_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
