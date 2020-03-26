@@ -2,16 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
+    android:orientation="vertical">
 
 
     <TextView
+        android:id="@+id/review_detail_textview_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Plaats hier je review"/>
+        android:textSize="20dp"
+        android:text="Plaats hier je review" />
 
     <EditText
+        android:id="@+id/review_detail_editText_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Schrijf hier je review "
@@ -19,10 +21,13 @@
 
 
     <Button
+        android:id="@+id/review_detail_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="verzend" />
-
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 
