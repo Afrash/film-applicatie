@@ -73,6 +73,10 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
             //Json op de site is een string dus personslist.size = index = 0
             Log.i(TAG, "moviesArray length = " + movieList.length());
 
+
+            //TODO hiermee kan genre misschien opgehaald worden.
+            JSONArray genre = jsonResults.getJSONArray("genres");
+
             for (int i = 0; i < movieList.length(); i++){
                 //json object voor het element
                 JSONObject movie = movieList.getJSONObject(i);
