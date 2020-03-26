@@ -74,9 +74,6 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
             Log.i(TAG, "moviesArray length = " + movieList.length());
 
 
-            //TODO hiermee kan genre misschien opgehaald worden.
-            JSONArray genre = jsonResults.getJSONArray("genres");
-
             for (int i = 0; i < movieList.length(); i++){
                 //json object voor het element
                 JSONObject movie = movieList.getJSONObject(i);
@@ -90,6 +87,8 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                 String vote_average= movie.getString("vote_average");
                 String overview  = movie.getString("overview");
                 String release_date = movie.getString("release_date");
+
+
                 //.getJSONObject("attributes").
 
                 String date = getPlaceDate(release_date);

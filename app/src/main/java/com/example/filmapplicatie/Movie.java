@@ -12,6 +12,7 @@ public class Movie{
     private String overview;
     private String release_date;
 
+
     public Movie(String popularity, String vote_count, String image, String identificationNumber, String language, String title, String vote_average, String overview, String release_date) {
         this.popularity = popularity;
         this.vote_count = vote_count;
@@ -59,4 +60,5 @@ public class Movie{
     public String getRelease_date() {
         return release_date;
     }
+
 }
