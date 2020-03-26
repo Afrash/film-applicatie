@@ -14,7 +14,7 @@
     <string name="sortMostPopular_text">Most Popular</string>
     <string name="sortLeastPopular_text">Least Popular</string>
 
-        <string name="navigation_drawer_open">Open navigation drawer</string>
-        <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 </resources>

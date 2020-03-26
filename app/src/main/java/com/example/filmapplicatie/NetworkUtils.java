@@ -93,7 +93,24 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                 JSONArray genres = movie.getJSONArray("genre_ids");
                 String text = genres.toString().replace("[", "").replace("]", "")
                         .replace("28","Action")
-
+                        .replace("12", "Adventure")
+                        .replace("16", "Animation")
+                        .replace("35", "Comedy")
+                        .replace("80", "Crime")
+                        .replace("99", "Documentary")
+                        .replace("18", "Drama")
+                        .replace("10751", "Family")
+                        .replace("14", "Fantasy")
+                        .replace("36", "History")
+                        .replace("27", "Horror")
+                        .replace("10402", "Music")
+                        .replace("9648", "Mystery")
+                        .replace("10749", "Romance")
+                        .replace("878", "Science Fiction")
+                        .replace("10770", "TV Movie")
+                        .replace("53", "Thriller")
+                        .replace("10752", "War")
+                        .replace("37", "Western")
                         ;
                 String date = getPlaceDate(release_date);
 
