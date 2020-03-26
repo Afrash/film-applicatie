@@ -70,16 +70,16 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
         try {
             JSONObject jsonResults = new JSONObject(response);
             JSONArray movieList = jsonResults.getJSONArray("results");
+
+
+
             //Json op de site is een string dus personslist.size = index = 0
             Log.i(TAG, "moviesArray length = " + movieList.length());
-
-
-            //TODO hiermee kan genre misschien opgehaald worden.
-            JSONArray genre = jsonResults.getJSONArray("genres");
 
             for (int i = 0; i < movieList.length(); i++){
                 //json object voor het element
                 JSONObject movie = movieList.getJSONObject(i);
+
                 //objecten die worden meegegeven voor de RecyclerView
                 String popularity = movie.getString("popularity");
                 String vote_count = movie.getString("vote_count");
@@ -90,8 +90,11 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                 String vote_average= movie.getString("vote_average");
                 String overview  = movie.getString("overview");
                 String release_date = movie.getString("release_date");
-                //.getJSONObject("attributes").
+                JSONArray genres = movie.getJSONArray("genre_ids");
+                String text = genres.toString().replace("[", "").replace("]", "")
+                        .replace("28","Action")
 
+                        ;
                 String date = getPlaceDate(release_date);
 
                 Movie movie_item = new Movie(popularity,
@@ -102,8 +105,12 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                         title,
                         vote_average,
                         overview,
-                        date);
+                        date,
+                        text);
                 movies.add(movie_item);
+
+
+
             }
         } catch (JSONException e) {
             Log.e(TAG, "error " + e.getMessage());
@@ -112,6 +119,7 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
         Log.e(TAG, "number of movies in list =  " + movies.size());
         return movies;
     }
+
 
     private String doSendRequestToAPI(String urlApiString) {
         //krijgt URL, stuurt resultaat terug, resultaat is de json String
