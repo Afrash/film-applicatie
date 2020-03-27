@@ -70,13 +70,16 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
         try {
             JSONObject jsonResults = new JSONObject(response);
             JSONArray movieList = jsonResults.getJSONArray("results");
+
+
+
             //Json op de site is een string dus personslist.size = index = 0
             Log.i(TAG, "moviesArray length = " + movieList.length());
-
 
             for (int i = 0; i < movieList.length(); i++){
                 //json object voor het element
                 JSONObject movie = movieList.getJSONObject(i);
+
                 //objecten die worden meegegeven voor de RecyclerView
                 String popularity = movie.getString("popularity");
                 String vote_count = movie.getString("vote_count");
@@ -87,11 +90,28 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                 String vote_average= movie.getString("vote_average");
                 String overview  = movie.getString("overview");
                 String release_date = movie.getString("release_date");
-
-
-                //.getJSONObject("attributes").
-
-                String date = getPlaceDate(release_date);
+                JSONArray genres = movie.getJSONArray("genre_ids");
+                String text = genres.toString().replace("[", "").replace("]", "")
+                        .replace("28","Action")
+                        .replace("12", "Adventure")
+                        .replace("16", "Animation")
+                        .replace("35", "Comedy")
+                        .replace("80", "Crime")
+                        .replace("99", "Documentary")
+                        .replace("18", "Drama")
+                        .replace("10751", "Family")
+                        .replace("14", "Fantasy")
+                        .replace("36", "History")
+                        .replace("27", "Horror")
+                        .replace("10402", "Music")
+                        .replace("9648", "Mystery")
+                        .replace("10749", "Romance")
+                        .replace("878", "Science Fiction")
+                        .replace("10770", "TV Movie")
+                        .replace("53", "Thriller")
+                        .replace("10752", "War")
+                        .replace("37", "Western")
+                        ;
 
                 Movie movie_item = new Movie(popularity,
                         vote_count,
@@ -101,8 +121,12 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                         title,
                         vote_average,
                         overview,
-                        date);
+                        release_date,
+                        text);
                 movies.add(movie_item);
+
+
+
             }
         } catch (JSONException e) {
             Log.e(TAG, "error " + e.getMessage());
@@ -111,6 +135,7 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
         Log.e(TAG, "number of movies in list =  " + movies.size());
         return movies;
     }
+
 
     private String doSendRequestToAPI(String urlApiString) {
         //krijgt URL, stuurt resultaat terug, resultaat is de json String
@@ -224,18 +249,6 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
         return movies;
     }
 
-    public String getPlaceDate(String date) {
-        Log.i(TAG, "change Date");
-        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(Long.parseLong(date));
-            String currentTime = formatter.format(calendar.getTime());
-            return currentTime;
-        } catch (Exception e){
-            return "Geen data beschikbaar";
-        }
-    }
 
     //Main activity en Networkutilsclass kunnen communiceren met elkaar
     public interface OnElementApiListener{

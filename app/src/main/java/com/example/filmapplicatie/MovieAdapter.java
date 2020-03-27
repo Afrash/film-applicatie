@@ -57,7 +57,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
 
         holder.title.setText(mMovies.get(position).getTitle());
-        holder.release_date.setText(mMovies.get(position).getRelease_date());
+        holder.genre.setText(mMovies.get(position).getGenre());
         holder.identification_nr.setText(mMovies.get(position).getIdentificationNumber());
     }
 
@@ -72,7 +72,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView image;
         private TextView title;
-        private TextView release_date;
+        private TextView genre;
         private TextView identification_nr;
 
         //geeft attributen aan XML
@@ -81,12 +81,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
             image = (ImageView) itemView.findViewById(R.id.element_item_imageview);
             title = (TextView) itemView.findViewById(R.id.element_title);
-            release_date = (TextView) itemView.findViewById(R.id.overview);
+            genre= (TextView) itemView.findViewById(R.id.overview);
             identification_nr = (TextView) itemView.findViewById(R.id.identification_nr);
             //setOnClickListeners
             image.setOnClickListener(this);
             title.setOnClickListener(this);
-            release_date.setOnClickListener(this);
+            genre.setOnClickListener(this);
             itemView.setOnClickListener(this);
         }
 
