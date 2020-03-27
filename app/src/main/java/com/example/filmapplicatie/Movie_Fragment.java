@@ -1,4 +1,5 @@
 package com.example.filmapplicatie;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Movie_Fragment extends Fragment implements View.OnClickListener,NetworkUtils.OnElementApiListener
         ,MovieOnClickHandler {
@@ -68,25 +70,33 @@ return rootview;
 
 
 
-    public void onRadioButtonClicked(MenuItem item){
-        Log.i(TAG, "onRadioButtonClicked was called");
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Log.i(TAG, "onOptionsItemSelected called");
 
-        boolean checked = ((RadioButton) item).isChecked();
-
-        switch (item.getItemId()){
+        switch(item.getItemId()){
             case R.id.menu_sort_alphabetical:
-                if(checked)
-                    //Sort alphabetically
-                break;
+                Log.i(TAG, "onCreateOptionsMenu sort alphabetical called");
+                item.setChecked(true);
+                Collections.sort(mMovies, new Sorter.SortAlphabetical());
+                mAdapter.notifyDataSetChanged();
+                return true;
             case R.id.menu_sort_most_popular:
-                if(checked)
-                    //Sort most popular
-                break;
+                Log.i(TAG, "onCreateOptionsMenu sort most popular called");
+                item.setChecked(true);
+                Collections.sort(mMovies, new Sorter.SortMostPopular());
+                mAdapter.notifyDataSetChanged();
+                return true;
             case R.id.menu_sort_least_popular:
-                if(checked)
-                    //Sort by least popular
-                break;
+                Log.i(TAG, "onCreateOptionsMenu sort least popular called");
+                item.setChecked(true);
+                Collections.sort(mMovies, new Sorter.SortMostPopular());
+                mAdapter.notifyDataSetChanged();
+
+                return true;
         }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
