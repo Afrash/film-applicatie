@@ -39,8 +39,8 @@ public class MovieDetailActivity extends AppCompatActivity {
         vote_Average = findViewById(R.id.vote_average);
         //TODO kijken wat we hiermee gaan doen met deze 2.
         overview = findViewById(R.id.movie_summary_in);
-        release_date = findViewById(R.id.movie_releaseDate);
-        genre = findViewById(R.id.movie_genre);
+        release_date = findViewById(R.id.movie_releaseDate_in);
+        genre = findViewById(R.id.movie_genre_in);
       //  popularity = findViewById(R.id.);
       //  identificationNumber = findViewById(R.id.placement_date_detail);
 
@@ -74,7 +74,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         overview.setText(mOverview);
         release_date.setText(mRelease_date);
    //     identificationNumber.setText(midentificationNumber);
-        popularity.setText(mPopularity);
+       // popularity.setText(mPopularity);
 
 
 

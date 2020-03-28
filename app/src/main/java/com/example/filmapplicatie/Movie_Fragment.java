@@ -149,6 +149,8 @@ return rootview;
         String language = this.mMovies.get(itemIndex).getLanguage();
         String identificationNumber = this.mMovies.get(itemIndex).getIdentificationNumber();
         String release_date = this.mMovies.get(itemIndex).getRelease_date();
+        //genre
+        String genres = this.mMovies.get(itemIndex).getGenre();
 //
 //        //stop het in de intent zodat je de data kan krijgen in de andere class
         intent.putExtra("IMAGE", image);
@@ -160,6 +162,8 @@ return rootview;
         intent.putExtra("LANGUAGE", language);
         intent.putExtra("IDENTIFICATIONNUMBER", identificationNumber);
         intent.putExtra("RELEASE_DATE", release_date);
+        //genre
+        intent.putExtra("GENRES", genres);
 
 
         Log.d(TAG, "start activity");
