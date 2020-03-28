@@ -9,6 +9,7 @@
         android:id="@+id/Movie_title_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="30dp"
         />
 
 
@@ -23,8 +24,8 @@
         android:id="@+id/review_detail_editText_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Schrijf hier je review "
-        android:textSize="11sp"/>
+        android:hint="Schrijf hier je review "
+        android:textSize="20dp"/>
 
 
     <Button

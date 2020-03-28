@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,6 +26,7 @@ public class MovieDetailActivity extends AppCompatActivity {
   //  private TextView identificationNumber;
     private TextView genre;
     private TextView popularity;
+    private Button reviewButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +80,19 @@ public class MovieDetailActivity extends AppCompatActivity {
        // popularity.setText(mPopularity);
 
 
+        reviewButton = (Button) findViewById(R.id.reviewButton);
+
+        //go to review screen
+        final Intent reviewIntent = new Intent(getApplicationContext(), ReviewDetailActivity.class);
+        reviewIntent.putExtra("TITLE", mTitle);
+
+        reviewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), MainActivity.class);
+                startActivity(reviewIntent);
+            }
+        });
 
     }
 }
