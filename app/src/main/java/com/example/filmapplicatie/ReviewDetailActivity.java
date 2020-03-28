@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,10 +18,10 @@ public class ReviewDetailActivity extends AppCompatActivity {
     private static String TAG = ReviewDetailActivity.class.getName();
 
     private TextView title;
-    private ImageView image;
-    private TextView reviewId;
-    private TextView ratingAverage;
-    private TextView numberOfVotes;
+    private EditText review2;
+    private EditText rating;
+    private Button add;
+    private SQLiteDatabaseHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,25 +29,24 @@ public class ReviewDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_review_detail);
 
         title = (TextView) findViewById(R.id.Movie_title_id);
+        add = (Button) findViewById(R.id.review_detail_button_id);
+        review2 = (EditText) findViewById(R.id.review_detail_editText_id);
+        rating = (EditText) findViewById(R.id.rating) ;
 
 
         Intent intent = getIntent();
-
-
-
-
         String mTitle = intent.getExtras().getString("TITLE");
-//        String mImage = intent.getExtras().getString("IMAGE");
-//
-//
-//        //set the image
-//        Picasso.get()
-//                .load("https://image.tmdb.org/t/p/w500" + mImage)
-//                .into(image);
-//
-//
         title.setText(mTitle);
 
+        final Review review = new Review(title.getText().toString(), review2.getText().toString(), rating.getText().toString());
+        Log.i(TAG, "content in review: " + review.toString());
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //db.addReviews(review);
+            }
+        });
 
     }
 }
