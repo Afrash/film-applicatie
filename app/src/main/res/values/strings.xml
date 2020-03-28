@@ -17,4 +17,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="add_review_button">Review </string>
+    <string name="add_toList_button">Add  </string>
+
 </resources>

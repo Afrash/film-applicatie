@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#faf7f7">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,25 +19,30 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Plaats review"
-            android:layout_weight="1"
+            android:text="@string/add_review_button"
+            android:drawableRight="@drawable/ic_rate_review"
             android:id="@+id/reviewButton"></Button>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="voeg toe aan lijst"
-            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_list_add"
+            android:text="@string/add_toList_button"
             android:id="@+id/listAdd"></Button>
     </LinearLayout>
         <ImageView
             android:id="@+id/poster_imageview"
             android:layout_width="match_parent"
-            android:layout_height="300dp"></ImageView>
+            android:layout_height="300dp"
+            android:layout_marginBottom="20sp">
+
+        </ImageView>
 
         <TextView
             android:id="@+id/movie_title_in"
+            android:textColor="#242222"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:textSize="35sp"
             android:textAlignment="center"
             android:textStyle="bold"
@@ -57,7 +63,9 @@
         <TextView
             android:id="@+id/movie_summary_in"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="15sp">
         </TextView>
 
         <LinearLayout
@@ -72,8 +80,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:text="@string/genre_text"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold">
             </TextView>
 
@@ -81,7 +90,7 @@
                 android:id="@+id/movie_genre_in"
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_height="match_parent">
             </TextView>
         </LinearLayout>
@@ -97,8 +106,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:text="@string/language_text"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold">
             </TextView>
 
@@ -106,7 +116,7 @@
                 android:id="@+id/movie_language_in"
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_height="match_parent">
             </TextView>
         </LinearLayout>
@@ -122,8 +132,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:text="@string/eighteenPlus_text"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold">
             </TextView>
 
@@ -131,7 +142,7 @@
                 android:id="@+id/movie_eighteenPlus_in"
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_height="match_parent">
             </TextView>
         </LinearLayout>
@@ -147,8 +158,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:text="@string/releaseDate_text"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold">
             </TextView>
 
@@ -156,7 +168,7 @@
                 android:id="@+id/movie_releaseDate_in"
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_height="match_parent">
             </TextView>
         </LinearLayout>
@@ -172,8 +184,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:text="@string/runtime_text"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold">
             </TextView>
 
@@ -181,7 +194,7 @@
                 android:id="@+id/movie_runtime_in"
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_height="match_parent">
             </TextView>
         </LinearLayout>
@@ -197,8 +210,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:text="@string/budget_text"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold">
             </TextView>
 
@@ -206,7 +220,7 @@
                 android:id="@+id/movie_budget_in"
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_height="match_parent">
             </TextView>
         </LinearLayout>
@@ -222,8 +236,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:text="@string/revenue_text"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold">
             </TextView>
 
@@ -231,7 +246,7 @@
                 android:id="@+id/movie_revenue_in"
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_height="match_parent">
             </TextView>
 
@@ -245,9 +260,10 @@
                     android:id="@+id/vote_count"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:text="Vote count"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
                     android:textStyle="bold">
                 </TextView>
 
@@ -256,7 +272,7 @@
                     android:id="@+id/vote_count_in"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:layout_height="match_parent"
                     android:textStyle="bold">
                 </TextView>
@@ -274,8 +290,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
                     android:text="vote_average"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold">
                 </TextView>
 
@@ -283,7 +300,7 @@
                     android:id="@+id/Vote_average_in"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:layout_height="match_parent">
                 </TextView>
             </LinearLayout>
