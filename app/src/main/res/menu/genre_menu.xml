@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">\
+
+    <item
+        android:id="@+id/genre_filter_icon"
+        android:icon="@drawable/ic_movie_filter"
+        android:title="Movie Filter"
+        app:showAsAction="ifRoom">
+    </item>
 
     <item
         android:id="@+id/genre_action"
