@@ -12,9 +12,10 @@ public class Movie{
     private String overview;
     private String release_date;
     private String genre;
+    private String adult;
 
 
-    public Movie(String popularity, String vote_count, String image, String identificationNumber, String language, String title, String vote_average, String overview, String release_date, String genre) {
+    public Movie(String popularity, String vote_count, String image, String identificationNumber, String language, String title, String vote_average, String overview, String release_date, String genre, String adult) {
         this.popularity = popularity;
         this.vote_count = vote_count;
         this.image = image;
@@ -25,7 +26,7 @@ public class Movie{
         this.overview = overview;
         this.release_date = release_date;
         this.genre = genre;
-
+        this.adult = adult;
     }
 
     public String getPopularity() {
@@ -66,5 +67,9 @@ public class Movie{
 
     public String getGenre() {
         return genre;
+    }
+
+    public String getAdult() {
+        return adult;
     }
 }

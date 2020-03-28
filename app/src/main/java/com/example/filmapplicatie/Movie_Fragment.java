@@ -149,6 +149,7 @@ return rootview;
         String language = this.mMovies.get(itemIndex).getLanguage();
         String identificationNumber = this.mMovies.get(itemIndex).getIdentificationNumber();
         String release_date = this.mMovies.get(itemIndex).getRelease_date();
+        String adult = this.mMovies.get(itemIndex).getAdult();
         //genre
         String genres = this.mMovies.get(itemIndex).getGenre();
 //
@@ -162,6 +163,7 @@ return rootview;
         intent.putExtra("LANGUAGE", language);
         intent.putExtra("IDENTIFICATIONNUMBER", identificationNumber);
         intent.putExtra("RELEASE_DATE", release_date);
+        intent.putExtra("ADULT", adult);
         //genre
         intent.putExtra("GENRES", genres);
 

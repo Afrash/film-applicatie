@@ -84,6 +84,11 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                 String image = movie.getString("poster_path");
                 String identificationNumber = movie.getString("id");
                 String language= movie.getString("original_language");
+                String adult = movie.getString("adult");
+
+                String adultFull = adult
+                        .replace("false", "No")
+                        .replace("true", "Yes");
 
                 String languageFull = language
                         .replace("en", "English")
@@ -130,7 +135,8 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                         vote_average,
                         overview,
                         release_date,
-                        text);
+                        text,
+                        adultFull);
                 movies.add(movie_item);
 
 

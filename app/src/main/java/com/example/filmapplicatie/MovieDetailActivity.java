@@ -23,6 +23,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     private TextView vote_Average;
     private TextView overview;
     private TextView release_date;
+    private TextView adult;
   //  private TextView identificationNumber;
     private TextView genre;
     private TextView popularity;
@@ -40,6 +41,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         title = findViewById(R.id.movie_title_in);
         vote_Count = findViewById(R.id.vote_count);
         vote_Average = findViewById(R.id.vote_average);
+        adult = findViewById(R.id.movie_eighteenPlus_in);
         //TODO kijken wat we hiermee gaan doen met deze 2.
         overview = findViewById(R.id.movie_summary_in);
         release_date = findViewById(R.id.movie_releaseDate_in);
@@ -61,6 +63,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         String mRelease_date = intent.getExtras().getString("RELEASE_DATE");
         String mPopularity = intent.getExtras().getString("POPULARITY");
         String mGenre = intent.getExtras().getString("GENRES");
+        String mAdult = intent.getExtras().getString("ADULT");
       //  String midentificationNumber = intent.getExtras().getString("IDENTIFICATIONNUMBER");
 
         //set the image
@@ -76,6 +79,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         vote_Average.setText(mVote_average);
         overview.setText(mOverview);
         release_date.setText(mRelease_date);
+        adult.setText(mAdult);
    //     identificationNumber.setText(midentificationNumber);
        // popularity.setText(mPopularity);
 
