@@ -89,7 +89,6 @@ public class MovieDetailActivity extends AppCompatActivity {
         reviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), MainActivity.class);
                 startActivity(reviewIntent);
             }
         });
