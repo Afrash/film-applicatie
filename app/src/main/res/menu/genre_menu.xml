@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/genre_action"
+        android:title="@string/genre_action"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_animation"
+        android:title="@string/genre_animation"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_comedy"
+        android:title="@string/genre_comedy"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_crime"
+        android:title="@string/genre_crime"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_drama"
+        android:title="@string/genre_drama"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_family"
+        android:title="@string/genre_family"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_fantasy"
+        android:title="@string/genre_fantasy"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_historical"
+        android:title="@string/genre_historical"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/horror"
+        android:title="@string/genre_horror"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_mystery"
+        android:title="@string/genre_mystery"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_romance"
+        android:title="@string/genre_romance"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_science_fiction"
+        android:title="@string/genre_science_fiction"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_thriller"
+        android:title="@string/genre_thriller"
+        android:checkable="true">
+    </item>
+
+    <item
+        android:id="@+id/genre_western"
+        android:title="@string/genre_western"
+        android:checkable="true">
+    </item>
+
+</menu>
