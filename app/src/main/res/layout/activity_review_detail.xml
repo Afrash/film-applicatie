@@ -32,7 +32,7 @@
         android:id="@+id/review_detail_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="verzend" />
+        android:text="add to list" />
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
