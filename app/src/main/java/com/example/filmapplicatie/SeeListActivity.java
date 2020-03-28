@@ -1,6 +1,7 @@
 package com.example.filmapplicatie;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,5 +34,8 @@ public class SeeListActivity extends AppCompatActivity {
         movie.setText(movieText);
         review.setText(reviewText);
         rating.setText(ratingText);
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
     }
 }
