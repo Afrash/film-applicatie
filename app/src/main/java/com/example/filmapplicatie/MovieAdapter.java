@@ -58,7 +58,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         holder.title.setText(mMovies.get(position).getTitle());
         holder.genre.setText(mMovies.get(position).getGenre());
-        holder.identification_nr.setText(mMovies.get(position).getIdentificationNumber());
+        holder.language.setText(mMovies.get(position).getLanguage());
     }
 
     //bepaald het nummer van elementen in de lijst
@@ -73,7 +73,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         private ImageView image;
         private TextView title;
         private TextView genre;
-        private TextView identification_nr;
+        private TextView language;
 
         //geeft attributen aan XML
         public ViewHolder(View itemView) {
@@ -81,8 +81,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
             image = (ImageView) itemView.findViewById(R.id.element_item_imageview);
             title = (TextView) itemView.findViewById(R.id.element_title);
-            genre= (TextView) itemView.findViewById(R.id.overview);
-            identification_nr = (TextView) itemView.findViewById(R.id.identification_nr);
+            genre= (TextView) itemView.findViewById(R.id.genre);
+            language = (TextView) itemView.findViewById(R.id.language);
             //setOnClickListeners
             image.setOnClickListener(this);
             title.setOnClickListener(this);
