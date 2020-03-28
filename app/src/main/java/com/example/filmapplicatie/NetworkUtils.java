@@ -84,12 +84,21 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                 String image = movie.getString("poster_path");
                 String identificationNumber = movie.getString("id");
                 String language= movie.getString("original_language");
+
+                String languageFull = language
+                        .replace("en", "English")
+                        .replace("es", "Spanish")
+                        .replace("ta", "Tamil")
+                        .replace("id", "Indonesian")
+                        .replace("ja", "Japanese")
+                        .replace("nl", "Dutch");
+
                 String title = movie.getString("original_title");
                 String vote_average= movie.getString("vote_average");
                 String overview  = movie.getString("overview");
                 String release_date = movie.getString("release_date");
                 JSONArray genres = movie.getJSONArray("genre_ids");
-                String text = genres.toString().replace("[", "").replace("]", "")
+                String text = genres.toString().replace("[", "").replace("]", " ")
                         .replace("28","Action")
                         .replace("12", "Adventure")
                         .replace("16", "Animation")
@@ -109,13 +118,14 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                         .replace("53", "Thriller")
                         .replace("10752", "War")
                         .replace("37", "Western")
+                        .replace(",", "\n")
                         ;
 
                 Movie movie_item = new Movie(popularity,
                         vote_count,
                         image,
                         identificationNumber,
-                        language,
+                        languageFull,
                         title,
                         vote_average,
                         overview,
