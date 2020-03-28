@@ -51,7 +51,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
 
-        //TODO Genre moet hier ook in komen.
+
         String mTitle = intent.getExtras().getString("TITLE");
         String mImage = intent.getExtras().getString("IMAGE");
         String mLanguage = intent.getExtras().getString("LANGUAGE");
