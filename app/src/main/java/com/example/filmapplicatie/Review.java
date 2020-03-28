@@ -2,37 +2,41 @@ package com.example.filmapplicatie;
 
 public class Review {
 
-    private String reviewId;
-    private int ratingAverage;
-    private int numberOfVotes;
+    private String movie;
+    private String review;
+    private String rating;
 
-    public Review(String reviewId, int ratingAverage, int numberOfVotes) {
-        this.reviewId = reviewId;
-        this.ratingAverage = ratingAverage;
-        this.numberOfVotes = numberOfVotes;
+    public Review(){
+
     }
 
-    public String getReviewId() {
-        return reviewId;
+    public Review(String movie, String review, String rating) {
+        this.movie = movie;
+        this.review = review;
+        this.rating = rating;
     }
 
-    public int getRatingAverage() {
-        return ratingAverage;
+    public void setMovie(String movie) {
+        this.movie = movie;
     }
 
-    public int getNumberOfVotes() {
-        return numberOfVotes;
+    public void setReview(String review) {
+        this.review = review;
     }
 
-    public void setReviewId(String reviewId) {
-        this.reviewId = reviewId;
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 
-    public void setRatingAverage(int ratingAverage) {
-        this.ratingAverage = ratingAverage;
+    public String getMovie() {
+        return movie;
     }
 
-    public void setNumberOfVotes(int numberOfVotes) {
-        this.numberOfVotes = numberOfVotes;
+    public String getReview() {
+        return review;
+    }
+
+    public String getRating() {
+        return rating;
     }
 }
