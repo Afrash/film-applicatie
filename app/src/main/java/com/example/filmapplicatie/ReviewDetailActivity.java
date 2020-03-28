@@ -28,6 +28,8 @@ public class ReviewDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_detail);
 
+        db = new SQLiteDatabaseHandler(this);
+
         title = (TextView) findViewById(R.id.Movie_title_id);
         add = (Button) findViewById(R.id.review_detail_button_id);
         review2 = (EditText) findViewById(R.id.review_detail_editText_id);
@@ -38,13 +40,22 @@ public class ReviewDetailActivity extends AppCompatActivity {
         String mTitle = intent.getExtras().getString("TITLE");
         title.setText(mTitle);
 
-        final Review review = new Review(title.getText().toString(), review2.getText().toString(), rating.getText().toString());
-        Log.i(TAG, "content in review: " + review.toString());
+        //Review review = new Review(title.getText().toString(), review2.getText().toString(), rating.getText().toString());
+        //db.addReviews(review);
+       // Log.i(TAG, "content in review: " + review.toString());
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //db.addReviews(review);
+                Review review = new Review(title.getText().toString(), review2.getText().toString(), rating.getText().toString());
+                db.addReviews(review);
+
+                Intent i = new Intent(ReviewDetailActivity.this, SeeListActivity.class);
+                i.putExtra("MOVIE", review.getMovie());
+                i.putExtra("REVIEW", review.getReview());
+                i.putExtra("RATING", review.getRating());
+                startActivity(i);
+
             }
         });
 

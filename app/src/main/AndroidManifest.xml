@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReviewDetailActivity"></activity>
+        <activity android:name=".SeeListActivity"></activity>
+        <activity android:name=".ReviewDetailActivity" />
         <activity android:name=".MovieDetailActivity" />
         <activity
             android:name=".MainActivity"

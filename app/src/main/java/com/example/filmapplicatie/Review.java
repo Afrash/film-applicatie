@@ -39,4 +39,13 @@ public class Review {
     public String getRating() {
         return rating;
     }
+
+    @Override
+    public String toString() {
+        return "Review{" +
+                "movie='" + movie + '\'' +
+                ", review='" + review + '\'' +
+                ", rating='" + rating + '\'' +
+                '}';
+    }
 }
