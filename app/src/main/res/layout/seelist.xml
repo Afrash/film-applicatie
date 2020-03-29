@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
 
-        <EditText
+        <TextView
             android:id="@+id/movie_title_a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,13 +26,13 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
+            <TextView
                 android:id="@+id/review"
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="wrap_content"
                 android:textSize="14sp" >
-            </EditText>
+            </TextView>
 
             <TextView
                 android:id="@+id/movie_rating"

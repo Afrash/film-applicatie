@@ -30,10 +30,7 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATION_TABLE = "CREATE TABLE Reviews ( "
-                + "movie TEXT, " + "review TEXT, "
-                + "rating TEXT, " + "height INTEGER )";
-
+        String CREATION_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + KEY_ID + "TEXT PRIMARY KEY," + KEY_NAME + " TEXT," + KEY_RATING + " TEXT" + ")";
         db.execSQL(CREATION_TABLE);
     }
 

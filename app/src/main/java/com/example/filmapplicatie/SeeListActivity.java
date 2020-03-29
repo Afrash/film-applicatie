@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.filmapplicatie.database.SQLiteDatabaseHandler;
 import com.example.filmapplicatie.movie.MovieAdapter;
 import com.example.filmapplicatie.movie.Movie_Fragment;
 import com.example.filmapplicatie.review.Review;
@@ -37,7 +38,7 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
     private EditText rating;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        protected void onCreate(Bundle savedInstanceState) {
         //TODO recyclerview van maken om alles van database te weergeven, dus recyclerview met een detailactivityview zodat we alle data kunnen weergeven.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_list);
@@ -46,20 +47,26 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
 
 //        movie = (EditText) findViewById(R.id.seeMovieTitle);
 //        review = (EditText) findViewById(R.id.showReview);
-//        rating = (EditText) findViewById(R.id.showRating) ;
+//        rating = (EditText) findViewById(R.id.showRating);
 //
         Intent i = getIntent();
 
-        String movieText = i.getExtras().getString("MOVIE");
-        String reviewText = i.getExtras().getString("REVIEW");
-        String ratingText = i.getExtras().getString("RATING");
+        String movieText = "";
+        String reviewText = "";
+        String ratingText = "";
+
+
+
+        movieText = i.getExtras().getString("MOVIE");
+        reviewText = i.getExtras().getString("REVIEW");
+        ratingText = i.getExtras().getString("RATING");
         Log.i(TAG, "This is in the intent: " + movieText);
         Log.i(TAG, "This is in the intent: " + reviewText);
         Log.i(TAG, "This is in the intent: " + ratingText);
 //
 //        movie.setText(movieText);
-//        review.setText(reviewText);
-//        rating.setText(ratingText);
+////        review.setText(reviewText);
+////        rating.setText(ratingText);
 //
         ArrayList<Review> reviews = new ArrayList<>();
 
@@ -78,6 +85,8 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
         mRecyclerView.setLayoutManager(mLayoutManager);
 
 
+
+        //Log.i(TAG, "this is in the database:  " + db.allReviews());
 
         mAdapter.notifyDataSetChanged();
     }
