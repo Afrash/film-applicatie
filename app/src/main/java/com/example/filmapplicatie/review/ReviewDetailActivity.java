@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,6 +55,8 @@ public class ReviewDetailActivity extends AppCompatActivity {
                 i.putExtra("MOVIE", review.getMovie());
                 i.putExtra("REVIEW", review.getReview());
                 i.putExtra("RATING", review.getRating());
+
+                Log.i(TAG, "go to next activity ");
                 startActivity(i);
 
             }
