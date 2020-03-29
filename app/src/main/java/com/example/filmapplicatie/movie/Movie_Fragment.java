@@ -37,8 +37,12 @@ public class Movie_Fragment extends Fragment implements View.OnClickListener, Ne
     private Button searchButton;
     private TextView wholeText;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+//    private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private MovieAdapter mAdapter;
+
+    //Filter
+    private boolean isChecked = false;
 
 
     @Nullable
@@ -106,9 +110,21 @@ return rootview;
                 mAdapter.notifyDataSetChanged();
 
                 return true;
+            case R.id.genre_action:
+                Log.i(TAG, "onCreateOptionsMenu filter on action called");
+                checkIfChecked(item);
+                mAdapter.getFilter().filter(item.getTitle());
+                return true;
+
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+        public void checkIfChecked(MenuItem item){
+            Log.i(TAG, "checkIfChecked called");
+            isChecked = !item.isChecked();
+            item.setChecked(isChecked);
     }
 
     @Override

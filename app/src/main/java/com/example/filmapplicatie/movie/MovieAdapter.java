@@ -5,20 +5,25 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.filmapplicatie.R;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
+public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> implements Filterable {
 
     /*RecyclerView.Adapter - om data af te handelen in de collectie en om het aan een view te verbinden zodat het data afhandeld
     LayoutManager - Helps van positioning van items*/
     private final static String TAG =MovieAdapter.class.getName();
     private List<Movie> mMovies;
+    private List<Movie> mMoviesFull = new ArrayList<>();
     private final MovieOnClickHandler mMovieClicker;
 
     public MovieAdapter(List<Movie> mMovies, MovieOnClickHandler mMovieClicker) {
@@ -69,6 +74,56 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         Log.v(TAG, "item count in Adapter = " + mMovies.size());
         return mMovies.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        Log.i(TAG, "getFilter called");
+        return objectFilter;
+    }
+
+    private Filter objectFilter = new Filter(){
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            Log.i(TAG, "performFiltering called");
+            List<Movie> filteredList = new ArrayList<>();
+
+            String word = constraint.toString();
+
+            for(Movie a: mMovies){
+                mMoviesFull.add(a);
+            }
+
+            if(word == null || word.length() == 0){
+                filteredList.addAll(mMoviesFull);
+            } else{
+                String filterPattern = word.toLowerCase();
+                Log.d(TAG, "filterPattern: " + filterPattern);
+
+                for(Movie item: mMoviesFull){
+                    if(item.getGenre().toLowerCase().contains(filterPattern)){
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            results.count = filteredList.size();
+
+            Log.i(TAG, "performFiltering List returned: " + results.values + " | Amount of items: " + results.count);
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            Log.i(TAG, "publishResults called");
+            mMovies.clear();
+            mMovies.addAll((List)results.values);
+
+            notifyDataSetChanged();
+        }
+    };
 
     //met ViewHolder kan je bijhouden wat er gebeurd in je scherm
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
