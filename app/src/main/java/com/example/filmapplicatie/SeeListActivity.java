@@ -21,9 +21,10 @@ public class SeeListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.seelist);
 
-        movie = (EditText) findViewById(R.id.seeMovieTitle);
-        review = (EditText) findViewById(R.id.showReview);
-        rating = (EditText) findViewById(R.id.showRating) ;
+        movie = (EditText) findViewById(R.id.movie_title_a);
+        review = (EditText) findViewById(R.id.review );
+        rating = (EditText) findViewById(R.id.rating) ;
+
 
         Intent i = getIntent();
 
