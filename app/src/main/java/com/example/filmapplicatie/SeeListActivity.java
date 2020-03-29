@@ -36,6 +36,7 @@ public class SeeListActivity extends AppCompatActivity {
         rating.setText(ratingText);
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-    }
+//    public class ViewHolder extends RecyclerView.ViewHolder {
+//    }
+    //angelo?
 }
