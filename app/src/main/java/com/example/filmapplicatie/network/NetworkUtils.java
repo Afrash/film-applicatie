@@ -1,8 +1,11 @@
-package com.example.filmapplicatie;
+package com.example.filmapplicatie.network;
 
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import com.example.filmapplicatie.movie.Movie;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,10 +17,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
 

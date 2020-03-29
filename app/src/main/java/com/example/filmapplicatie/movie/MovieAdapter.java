@@ -1,4 +1,4 @@
-package com.example.filmapplicatie;
+package com.example.filmapplicatie.movie;
 
 import android.content.Context;
 import android.util.Log;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.filmapplicatie.R;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.filmapplicatie;
+package com.example.filmapplicatie.review;
 
 public class Review {
 

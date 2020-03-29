@@ -1,9 +1,7 @@
 package com.example.filmapplicatie;
 
 
-import android.content.Context;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -11,11 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.filmapplicatie.movie.MovieAdapter;
+import com.example.filmapplicatie.movie.MovieOnClickHandler;
+import com.example.filmapplicatie.review.Review;
+
 import java.util.List;
 
 public class SeeListActivityAdapter extends RecyclerView.Adapter<SeeListActivity.ViewHolder>  {
 
-    private final static String TAG =MovieAdapter.class.getName();
+    private final static String TAG = MovieAdapter.class.getName();
     private List<Review> mSeeList;
 
 
@@ -75,9 +77,9 @@ public class SeeListActivityAdapter extends RecyclerView.Adapter<SeeListActivity
 
         @Override
         public void onClick(View v) {
-//            Log.v(MovieAdapter.ViewHolder.class.getName(), "clicked on item");
-//            int itemIndex = getAdapterPosition();
-//            mMovieClicker.onElementClick(view, itemIndex);
+            Log.v(MovieAdapter.ViewHolder.class.getName(), "clicked on item");
+            int itemIndex = getAdapterPosition();
+            mMovieClicker.onElementClick(view, itemIndex);
         }
     }
 }

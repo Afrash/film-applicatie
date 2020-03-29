@@ -1,12 +1,13 @@
-package com.example.filmapplicatie;
+package com.example.filmapplicatie.database;
 
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.filmapplicatie.review.Review;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,17 +1,17 @@
-package com.example.filmapplicatie;
+package com.example.filmapplicatie.review;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.example.filmapplicatie.R;
+import com.example.filmapplicatie.SeeListActivity;
+import com.example.filmapplicatie.database.SQLiteDatabaseHandler;
 
 public class ReviewDetailActivity extends AppCompatActivity {
 

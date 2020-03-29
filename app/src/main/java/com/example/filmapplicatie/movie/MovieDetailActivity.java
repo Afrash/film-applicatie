@@ -1,4 +1,4 @@
-package com.example.filmapplicatie;
+package com.example.filmapplicatie.movie;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.filmapplicatie.R;
+import com.example.filmapplicatie.review.ReviewDetailActivity;
 import com.squareup.picasso.Picasso;
 
 public class MovieDetailActivity extends AppCompatActivity {

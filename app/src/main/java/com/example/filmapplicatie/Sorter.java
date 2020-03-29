@@ -1,5 +1,7 @@
 package com.example.filmapplicatie;
 
+import com.example.filmapplicatie.movie.Movie;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 

@@ -1,4 +1,4 @@
-package com.example.filmapplicatie;
+package com.example.filmapplicatie.movie;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -16,14 +16,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.filmapplicatie.network.NetworkUtils;
+import com.example.filmapplicatie.R;
+import com.example.filmapplicatie.Sorter;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Movie_Fragment extends Fragment implements View.OnClickListener,NetworkUtils.OnElementApiListener
+public class Movie_Fragment extends Fragment implements View.OnClickListener, NetworkUtils.OnElementApiListener
         ,MovieOnClickHandler {
 
     private static String TAG = Movie_Fragment.class.getName();
