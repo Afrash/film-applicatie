@@ -70,9 +70,9 @@ public class SeeListActivityAdapter extends RecyclerView.Adapter<SeeListActivity
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-//            movie = (TextView) itemView.findViewById(R.id.);
-//            review = (TextView) itemView.findViewById(R.id.);
-//            rating = (TextView) itemView.findViewById(R.id.);
+            movie = (TextView) itemView.findViewById(R.id.movie_title_a);
+            review = (TextView) itemView.findViewById(R.id.review);
+            rating = (TextView) itemView.findViewById(R.id.movie_rating);
 
             rating.setOnClickListener(this);
             movie.setOnClickListener(this);
