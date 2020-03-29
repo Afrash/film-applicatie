@@ -19,7 +19,7 @@ public class SeeListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //TODO recyclerview van maken om alles van database te weergeven, dus recyclerview met een detailactivityview zodat we alle data kunnen weergeven.
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_see_list);
+        setContentView(R.layout.seelist);
 
         movie = (EditText) findViewById(R.id.seeMovieTitle);
         review = (EditText) findViewById(R.id.showReview);
