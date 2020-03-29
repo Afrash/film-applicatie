@@ -51,7 +51,7 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
 //        movie.setText(movieText);
 //        review.setText(reviewText);
 //        rating.setText(ratingText);
-
+//
 
         mRecyclerView = (RecyclerView) findViewById(R.id.seelist_recycleview);
         //additemDecoration add een divider aan de recyclerview
