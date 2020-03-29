@@ -59,6 +59,7 @@ public class SeeListActivityAdapter extends RecyclerView.Adapter<SeeListActivity
 
     @Override
     public int getItemCount() {
+        Log.v(TAG, "item count in Adapter = " + mSeeList.size());
         return mSeeList.size();
     }
 

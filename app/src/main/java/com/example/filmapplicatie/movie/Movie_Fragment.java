@@ -77,7 +77,7 @@ public class Movie_Fragment extends Fragment implements View.OnClickListener, Ne
         Log.d(TAG, "NetworkUtils is called");
         //execute is een methode van een de abstracte klasse Asynchtask
         networkUtils.execute(url);
-return rootview;
+        return rootview;
     }
 
     @Override

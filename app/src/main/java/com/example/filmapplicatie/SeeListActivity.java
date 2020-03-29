@@ -7,18 +7,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.filmapplicatie.movie.MovieAdapter;
+import com.example.filmapplicatie.movie.Movie_Fragment;
 import com.example.filmapplicatie.review.Review;
 import com.example.filmapplicatie.review.SeeOnClickHandler;
 
 import java.util.ArrayList;
 
 public class SeeListActivity extends AppCompatActivity implements SeeOnClickHandler {
+
+    private static String TAG = SeeListActivity.class.getName();
 
     private ArrayList<Review> reviews;
     private EditText searchEditText;
@@ -38,20 +42,28 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_list);
 
+
+
 //        movie = (EditText) findViewById(R.id.seeMovieTitle);
 //        review = (EditText) findViewById(R.id.showReview);
 //        rating = (EditText) findViewById(R.id.showRating) ;
 //
-//        Intent i = getIntent();
-//
-//        String movieText = i.getExtras().getString("MOVIE");
-//        String reviewText = i.getExtras().getString("REVIEW");
-//        String ratingText = i.getExtras().getString("RATING");
+        Intent i = getIntent();
+
+        String movieText = i.getExtras().getString("MOVIE");
+        String reviewText = i.getExtras().getString("REVIEW");
+        String ratingText = i.getExtras().getString("RATING");
+        Log.i(TAG, "This is in the intent: " + movieText);
+        Log.i(TAG, "This is in the intent: " + reviewText);
+        Log.i(TAG, "This is in the intent: " + ratingText);
 //
 //        movie.setText(movieText);
 //        review.setText(reviewText);
 //        rating.setText(ratingText);
 //
+        ArrayList<Review> reviews = new ArrayList<>();
+
+        reviews.add(new Review(movieText, reviewText, ratingText));
 
         mRecyclerView = (RecyclerView) findViewById(R.id.seelist_recycleview);
         //additemDecoration add een divider aan de recyclerview
@@ -64,6 +76,10 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
         // Set layout manager to position the items
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+
+
+        mAdapter.notifyDataSetChanged();
     }
 
 
