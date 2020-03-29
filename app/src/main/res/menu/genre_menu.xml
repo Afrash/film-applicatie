@@ -51,7 +51,7 @@
     </item>
 
     <item
-        android:id="@+id/horror"
+        android:id="@+id/genre_horror"
         android:title="@string/genre_horror"
         android:checkable="true">
     </item>

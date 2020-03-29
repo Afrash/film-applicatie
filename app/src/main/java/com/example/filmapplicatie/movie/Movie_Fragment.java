@@ -90,6 +90,26 @@ return rootview;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Log.i(TAG, "onOptionsItemSelected called");
 
+        if(item.getItemId() == (R.id.genre_action)||
+                item.getItemId() == (R.id.genre_animation)||
+                item.getItemId() == (R.id.genre_comedy)||
+                item.getItemId() == (R.id.genre_crime)||
+                item.getItemId() == (R.id.genre_drama)||
+                item.getItemId() == (R.id.genre_family)||
+                item.getItemId() == (R.id.genre_fantasy)||
+                item.getItemId() == (R.id.genre_historical)||
+                item.getItemId() == (R.id.genre_horror)||
+                item.getItemId() == (R.id.genre_mystery)||
+                item.getItemId() == (R.id.genre_romance)||
+                item.getItemId() == (R.id.genre_science_fiction)||
+                item.getItemId() == (R.id.genre_thriller)||
+                item.getItemId() == (R.id.genre_western)){
+            Log.i(TAG, "onCreateOptionsMenu filter on action called");
+                checkIfChecked(item);
+                mAdapter.getFilter().filter(item.getTitle());
+                return true;
+        }
+
         switch(item.getItemId()){
             case R.id.menu_sort_alphabetical:
                 Log.i(TAG, "onCreateOptionsMenu sort alphabetical called");
@@ -110,12 +130,6 @@ return rootview;
                 mAdapter.notifyDataSetChanged();
 
                 return true;
-            case R.id.genre_action:
-                Log.i(TAG, "onCreateOptionsMenu filter on action called");
-                checkIfChecked(item);
-                mAdapter.getFilter().filter(item.getTitle());
-                return true;
-
         }
 
         return super.onOptionsItemSelected(item);
