@@ -6,40 +6,40 @@
     android:orientation="vertical">
 
 
-    <EditText
-        android:id="@+id/seeMovieTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        />
+<!--    <EditText-->
+<!--        android:id="@+id/seeMovieTitle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="30dp"-->
+<!--        />-->
 
 
-    <TextView
-        android:id="@+id/seeReview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="see review"
-        android:textSize="20dp"
-         />
+<!--    <TextView-->
+<!--        android:id="@+id/seeReview"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="see review"-->
+<!--        android:textSize="20dp"-->
+<!--         />-->
 
-    <EditText
-        android:id="@+id/showReview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"/>
+<!--    <EditText-->
+<!--        android:id="@+id/showReview"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="20dp"/>-->
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Give rating"
-        android:id="@+id/showRating"/>
+<!--    <EditText-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Give rating"-->
+<!--        android:id="@+id/showRating"/>-->
 
-    <Button
-        android:id="@+id/review_detail_button_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="add to list"
-        />
+<!--    <Button-->
+<!--        android:id="@+id/review_detail_button_id"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="add to list"-->
+<!--        />-->
 
 
 
