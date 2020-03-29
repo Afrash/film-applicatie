@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.filmapplicatie.R;
@@ -22,11 +23,14 @@ public class MovieDetailActivity extends AppCompatActivity {
     private TextView language;
     private TextView title;
     private TextView vote_Count;
-    private TextView vote_Average;
+
     private TextView overview;
     private TextView release_date;
     private TextView adult;
-  //  private TextView identificationNumber;
+
+    //RatingBar
+    private RatingBar ratingBar;
+
     private TextView genre;
     private TextView popularity;
     private Button reviewButton;
@@ -41,15 +45,12 @@ public class MovieDetailActivity extends AppCompatActivity {
         image = findViewById(R.id.poster_imageview);
         language = findViewById(R.id.movie_language_in);
         title = findViewById(R.id.movie_title_in);
-        vote_Count = findViewById(R.id.vote_count);
-        vote_Average = findViewById(R.id.vote_average);
+        ratingBar = findViewById(R.id.movie_rating_bar);
         adult = findViewById(R.id.movie_eighteenPlus_in);
         //TODO kijken wat we hiermee gaan doen met deze 2.
         overview = findViewById(R.id.movie_summary_in);
         release_date = findViewById(R.id.movie_releaseDate_in);
         genre = findViewById(R.id.movie_genre_in);
-      //  popularity = findViewById(R.id.);
-      //  identificationNumber = findViewById(R.id.placement_date_detail);
 
         Log.i(TAG, "retrieve intent");
         Intent intent = getIntent();
@@ -66,7 +67,12 @@ public class MovieDetailActivity extends AppCompatActivity {
         String mPopularity = intent.getExtras().getString("POPULARITY");
         String mGenre = intent.getExtras().getString("GENRES");
         String mAdult = intent.getExtras().getString("ADULT");
-      //  String midentificationNumber = intent.getExtras().getString("IDENTIFICATIONNUMBER");
+
+        float f = Float.parseFloat(mVote_average);
+        float amountOfStars = f/2;
+
+
+        String midentificationNumber = intent.getExtras().getString("IDENTIFICATIONNUMBER");
 
         //set the image
         Picasso.get()
@@ -77,8 +83,8 @@ public class MovieDetailActivity extends AppCompatActivity {
        language.setText(mLanguage);
         title.setText(mTitle);
         genre.setText(mGenre);
-        vote_Count.setText(mVote_count);
-        vote_Average.setText(mVote_average);
+        ratingBar.setNumStars(5);
+        ratingBar.setRating(amountOfStars);
         overview.setText(mOverview);
         release_date.setText(mRelease_date);
         adult.setText(mAdult);

@@ -37,8 +37,12 @@ public class Movie_Fragment extends Fragment implements View.OnClickListener, Ne
     private Button searchButton;
     private TextView wholeText;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+//    private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private MovieAdapter mAdapter;
+
+    //Filter
+    private boolean isChecked = false;
 
 
     @Nullable
@@ -86,6 +90,26 @@ return rootview;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Log.i(TAG, "onOptionsItemSelected called");
 
+        if(item.getItemId() == (R.id.genre_action)||
+                item.getItemId() == (R.id.genre_animation)||
+                item.getItemId() == (R.id.genre_comedy)||
+                item.getItemId() == (R.id.genre_crime)||
+                item.getItemId() == (R.id.genre_drama)||
+                item.getItemId() == (R.id.genre_family)||
+                item.getItemId() == (R.id.genre_fantasy)||
+                item.getItemId() == (R.id.genre_historical)||
+                item.getItemId() == (R.id.genre_horror)||
+                item.getItemId() == (R.id.genre_mystery)||
+                item.getItemId() == (R.id.genre_romance)||
+                item.getItemId() == (R.id.genre_science_fiction)||
+                item.getItemId() == (R.id.genre_thriller)||
+                item.getItemId() == (R.id.genre_western)){
+            Log.i(TAG, "onCreateOptionsMenu filter on action called");
+                checkIfChecked(item);
+                mAdapter.getFilter().filter(item.getTitle());
+                return true;
+        }
+
         switch(item.getItemId()){
             case R.id.menu_sort_alphabetical:
                 Log.i(TAG, "onCreateOptionsMenu sort alphabetical called");
@@ -109,6 +133,12 @@ return rootview;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+        public void checkIfChecked(MenuItem item){
+            Log.i(TAG, "checkIfChecked called");
+            isChecked = !item.isChecked();
+            item.setChecked(isChecked);
     }
 
     @Override

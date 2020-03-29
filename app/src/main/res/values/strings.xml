@@ -6,9 +6,7 @@
     <string name="language_text">Language</string>
     <string name="eighteenPlus_text">18+</string>
     <string name="releaseDate_text">Release date</string>
-    <string name="runtime_text">Runtime</string>
-    <string name="budget_text">Budget</string>
-    <string name="revenue_text">Revenue</string>
+    <string name="rating_text">Rating</string>
 
     <string name="sortAlphabetically_text">Alphabetical</string>
     <string name="sortMostPopular_text">Most Popular</string>
