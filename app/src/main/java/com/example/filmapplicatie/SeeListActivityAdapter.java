@@ -32,7 +32,7 @@ public class SeeListActivityAdapter extends RecyclerView.Adapter<SeeListActivity
 
     @NonNull
     @Override
-    public SeeListActivityAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.v(TAG, "++++++++ onCreateViewHolder - viewGroup-class: " + parent.getClass().getSimpleName());
         Log.v(TAG, "++++++++ onCreateViewHolder - viewGroup-resourceName: " + parent.getContext().getResources().getResourceName(parent.getId()));
         Log.v(TAG, "++++++++ onCreateViewHolder - viewGroup-resourceEntryName: " + parent.getContext().getResources().getResourceEntryName(parent.getId()));
@@ -43,7 +43,7 @@ public class SeeListActivityAdapter extends RecyclerView.Adapter<SeeListActivity
         /* maakt een nieuwe view aan
            set xml view*/
         View reviewListItem = inflator.inflate(R.layout.seelist, parent, false);
-        SeeListActivityAdapter.ViewHolder viewHolder2 = new SeeListActivityAdapter(reviewListItem);
+        SeeListActivityAdapter.ViewHolder viewHolder2 = new ViewHolder(reviewListItem);
 
         return viewHolder2;
     }
