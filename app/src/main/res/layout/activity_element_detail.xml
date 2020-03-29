@@ -173,140 +173,30 @@
             </TextView>
         </LinearLayout>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/movie_rating"
+            android:text="@string/rating_text"
+            android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="15dp">
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal">
+        </TextView>
 
-            <TextView
-                android:id="@+id/movie_runtime"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:text="@string/runtime_text"
-                android:textSize="20sp"
-                android:textStyle="bold">
-            </TextView>
-
-            <TextView
-                android:id="@+id/movie_runtime_in"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:textSize="20sp"
-                android:layout_height="match_parent">
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <RatingBar
+            android:id="@+id/movie_rating_bar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="15dp">
-
-            <TextView
-                android:id="@+id/movie_budget"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:text="@string/budget_text"
-                android:textSize="20sp"
-                android:textStyle="bold">
-            </TextView>
-
-            <TextView
-                android:id="@+id/movie_budget_in"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:textSize="20sp"
-                android:layout_height="match_parent">
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="15dp">
-
-            <TextView
-                android:id="@+id/movie_revenue"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:text="@string/revenue_text"
-                android:textSize="20sp"
-                android:textStyle="bold">
-            </TextView>
-
-            <TextView
-                android:id="@+id/movie_revenue_in"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:textSize="20sp"
-                android:layout_height="match_parent">
-            </TextView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="15dp">
-
-                <TextView
-                    android:id="@+id/vote_count"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:textSize="20sp"
-                    android:text="Vote count"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:textStyle="bold">
-                </TextView>
+            android:layout_gravity="center"
+            android:theme="@style/RatingBar"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:rating="0"><!--Default-->
+        </RatingBar>
 
 
-                <TextView
-                    android:id="@+id/vote_count_in"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:textSize="20sp"
-                    android:layout_height="match_parent"
-                    android:textStyle="bold">
-                </TextView>
 
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="15dp">
-
-                <TextView
-                    android:id="@+id/vote_average"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:text="vote_average"
-                    android:textSize="20sp"
-                    android:textStyle="bold">
-                </TextView>
-
-                <TextView
-                    android:id="@+id/Vote_average_in"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:textSize="20sp"
-                    android:layout_height="match_parent">
-                </TextView>
-            </LinearLayout>
-
-
-        </LinearLayout>
 
 
     </LinearLayout>
