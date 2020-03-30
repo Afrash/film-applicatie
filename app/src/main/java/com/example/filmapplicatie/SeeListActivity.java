@@ -72,8 +72,10 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
 //
         List<Review> reviews = new ArrayList<>();
 
-
+        //zet alle reviews van database in de arraylist.
         reviews = db.allReviews();
+
+
         //reviews.add(new Review(movieText, reviewText, ratingText));
         Log.i(TAG, "items in arrayList = " + reviews.size());
 
