@@ -93,6 +93,7 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
     public void addReviews(Review review) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put(KEY_ID, review.getMovie());
         values.put(KEY_NAME, review.getReview());
         values.put(KEY_RATING, review.getRating());
         // insert
