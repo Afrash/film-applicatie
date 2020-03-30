@@ -80,8 +80,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         switch (item.getItemId()) {
             case R.id.nav_message:
-                Intent newAct = new Intent(MainActivity.this, SeeListActivity.class);
-                startActivity(newAct);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SeeListActivity()).commit();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);
