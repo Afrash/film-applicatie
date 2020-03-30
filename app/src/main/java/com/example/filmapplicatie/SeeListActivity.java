@@ -20,6 +20,7 @@ import com.example.filmapplicatie.review.Review;
 import com.example.filmapplicatie.review.SeeOnClickHandler;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SeeListActivity extends AppCompatActivity implements SeeOnClickHandler {
 
@@ -69,11 +70,11 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
 //        review.setText(reviewText);
 //        rating.setText(ratingText);
 //
-        ArrayList<Review> reviews = new ArrayList<>();
+        List<Review> reviews = new ArrayList<>();
 
 
-
-        reviews.add(new Review(movieText, reviewText, ratingText));
+        reviews = db.allReviews();
+        //reviews.add(new Review(movieText, reviewText, ratingText));
         Log.i(TAG, "items in arrayList = " + reviews.size());
 
         mRecyclerView = (RecyclerView) findViewById(R.id.seelist_recycleview);
