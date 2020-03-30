@@ -41,9 +41,14 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
-    public void deleteOne(Review review){
+//    public void deleteOne(Review review){
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        db.delete(TABLE_NAME, "movie = ?", new String[]{ String.valueOf(review.getMovie())});
+//    }
+
+    public void deleteOne(String movie){
         SQLiteDatabase db = this.getReadableDatabase();
-        db.delete(TABLE_NAME, "movie = ?", new String[]{ String.valueOf(review.getMovie())});
+        db.delete(TABLE_NAME, "movie = ?", new String[]{ String.valueOf(movie)});
     }
 
     public Review getReview(int id) {

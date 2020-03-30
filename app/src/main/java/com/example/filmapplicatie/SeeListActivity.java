@@ -109,6 +109,7 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
 
     @Override
     public void onReviewClick(View view, int itemIndex) {
-
+            //TODO moet ik later naar kijken als ik deze nog kan fixe, is nu niet belangrijk.
+            //db.deleteOne(this.reviews.get(itemIndex).getMovie());
     }
 }
