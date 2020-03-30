@@ -45,7 +45,7 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                 .appendQueryParameter(PARAM_QUERY, movieSearchQuery)
                 .build();
 
-        //hier maak je een URL van de Uri
+        //Makes a URL of the URI
         URL url = null;
         try {
             url = new URL(builtUri.toString());
@@ -56,20 +56,13 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
         return url;
     }
 
-
-
     private ArrayList<Movie> createElementsFromJson(String response) {
-        //TODO runtime moet opgehaald worden/duration en ook in detail activity komen.
-        //TODO movieRevenue moet opgehaald worden/duration en ook in detail activity komen.
-
         Log.i(TAG, "createElementFromJson called");
         ArrayList<Movie> movies = new ArrayList<>();
 
         try {
             JSONObject jsonResults = new JSONObject(response);
             JSONArray movieList = jsonResults.getJSONArray("results");
-
-
 
             //Json op de site is een string dus personslist.size = index = 0
             Log.i(TAG, "moviesArray length = " + movieList.length());
@@ -139,8 +132,6 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                         adultFull);
                 movies.add(movie_item);
 
-
-
             }
         } catch (JSONException e) {
             Log.e(TAG, "error " + e.getMessage());
@@ -194,15 +185,15 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                 Log.e(TAG, "Fout in responsCode: code = " + responseCode);
             }
         } catch (MalformedURLException e) {
-            // De URL was niet correct geformuleerd.
+            // The URL wasnt correct.
             Log.e(TAG, "MalformedURLEx " + e.getMessage());
             return null;
         } catch (IOException e) {
-            // Het lukte niet om verbinding te maken.
+            // It didnt work to make a connection
             Log.e(TAG, "IOException " + e.getMessage());
             return null;
         }
-        // Hier hebben we een resultaat
+        // Here is the result
         Log.e(TAG, "Succesfull response send");
 
         return response;
@@ -225,7 +216,7 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
                 try {
                     br.close();
                 } catch (IOException e) {
-                    // Het lukte niet om verbinding te maken.
+                    // The connection didnt work
                     Log.e(TAG, "doInBackground IOException " + e.getMessage());
                 }
             }
@@ -233,16 +224,16 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
         return sb.toString();
     }
 
-    //word opgeroepen na de doInBackground methode
+    //onPostExecute is called after doInBackground
     @Override
     protected void onPostExecute(ArrayList<Movie> response) {
         Log.i(TAG, "onPostExecute called");
         Log.i(TAG, "response = " + response);
-        //onElementAvailable is een methode van de interface onElementApiListener
+        //onElementAvailable is an method of the interface onElementApiListener
         listener.onElementAvailable(response);
     }
 
-    //word als eerst opgeroepen
+    //doInbackground is called first
     @Override
     protected ArrayList<Movie> doInBackground(String... inputParams) {
         Log.i(TAG, "doInBackground called");
@@ -264,7 +255,7 @@ public class NetworkUtils extends AsyncTask<String, Void, ArrayList<Movie>> {
     }
 
 
-    //Main activity en Networkutilsclass kunnen communiceren met elkaar
+    //Main activity and Networkutilsclass can communicate with each other
     public interface OnElementApiListener{
         public void onElementAvailable(ArrayList<Movie> movies);
     }

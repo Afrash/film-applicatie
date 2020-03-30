@@ -153,7 +153,7 @@ public class Movie_Fragment extends Fragment implements View.OnClickListener, Ne
 
         //String url = bolSearchURL.toString();
 
-        //execute is een methode van een de abstracte klasse Asynchtask
+
         networkingTask.execute(bolSearchURL.toString());
     }
 

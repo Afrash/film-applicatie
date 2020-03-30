@@ -32,6 +32,7 @@ public class Movie{
     public String getPopularity() {
         return popularity;
     }
+    // getters and setters of Movie
 
     public String getVote_count() {
         return vote_count;

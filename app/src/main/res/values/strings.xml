@@ -35,14 +35,12 @@
     <string name="genre_western">Western</string>
     <string name="add_to_list">add to list</string>
     <string name="give_rating">Give rating</string>
-    <string name="schrijf_hier_je_review">Schrijf hier je review</string>
-    <string name="plaats_hier_je_review">Plaats hier je review</string>
+    <string name="schrijf_hier_je_review">Write your review here</string>
+    <string name="plaats_hier_je_review">Place your review here</string>
     <string name="home">Home</string>
-    <string name="_home">Home</string>
     <string name="movies">Movies</string>
     <string name="list">List</string>
     <string name="zoeken">zoeken</string>
-    <string name="zoek_naar">zoek_naar</string>
     <string name="_1234578">1234578</string>
     <string name="testuser">TestUser</string>
 
