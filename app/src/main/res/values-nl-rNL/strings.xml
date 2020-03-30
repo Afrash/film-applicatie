@@ -34,14 +34,13 @@
     <string name="genre_science_fiction" translatable="false">Science Fiction</string>
     <string name="genre_thriller" translatable="false">Thriller</string>
     <string name="genre_western" translatable="false">Westers</string>
-    <string name="zoekenId">zoeken</string>
+    <string name="zoeken">zoeken</string>
     <string name="plaats_hier_je_review">Plaats hier je review</string>
     <string name="schrijf_hier_je_review">Schrijf hier je review</string>
     <string name="give_rating">Geef beoordeling</string>
     <string name="add_to_list">Voeg toe aan de lijst </string>
-    <string name="back_to_startscreen">Terug naar startscherm</string>
     <string name="testuser">TestGebruiker</string>
-    <string name="1234578">1234578</string>
+    <string name="_1234578">1234578</string>
     <string name="home">Home</string>
     <string name="movies">Films</string>
     <string name="list">Lijst</string>
