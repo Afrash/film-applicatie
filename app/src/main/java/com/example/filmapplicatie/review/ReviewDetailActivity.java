@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.filmapplicatie.MainActivity;
 import com.example.filmapplicatie.R;
 import com.example.filmapplicatie.SeeListActivity;
 import com.example.filmapplicatie.database.SQLiteDatabaseHandler;
@@ -51,10 +52,12 @@ public class ReviewDetailActivity extends AppCompatActivity {
                 Review review = new Review(title.getText().toString(), review2.getText().toString(), rating.getText().toString());
                 db.addReviews(review);
 
-                Intent i = new Intent(ReviewDetailActivity.this, SeeListActivity.class);
+                Intent i = new Intent(getApplicationContext(), SeeListActivity.class);
                 i.putExtra("MOVIE", review.getMovie());
                 i.putExtra("REVIEW", review.getReview());
                 i.putExtra("RATING", review.getRating());
+
+
 
                 Log.i(TAG, "go to next activity ");
                 startActivity(i);

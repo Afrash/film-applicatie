@@ -1,6 +1,5 @@
+
 package com.example.filmapplicatie;
-
-
 
 import android.content.Context;
 import android.util.Log;
@@ -50,6 +49,9 @@ public class SeeListActivityAdapter extends RecyclerView.Adapter<SeeListActivity
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+
+
         holder.movie.setText(mSeeList.get(position).getMovie());
         holder.review.setText(mSeeList.get(position).getReview());
         holder.rating.setText(mSeeList.get(position).getRating());
