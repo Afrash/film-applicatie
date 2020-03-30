@@ -18,26 +18,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="Plaats hier je review" />
+        android:text="@string/plaats_hier_je_review" />
 
     <EditText
         android:id="@+id/review_detail_editText_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Schrijf hier je review "
+        android:hint="@string/schrijf_hier_je_review"
         android:textSize="20dp"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Give rating"
+        android:hint="@string/give_rating"
         android:id="@+id/rating"/>
 
     <Button
         android:id="@+id/review_detail_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add to list"
+        android:text="@string/add_to_list"
         />
 
 

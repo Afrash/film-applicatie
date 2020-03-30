@@ -19,7 +19,7 @@
         <EditText
             android:layout_width="295dp"
             android:layout_height="wrap_content"
-            android:hint="zoek_naar"
+            android:hint="@string/zoek_naar"
             android:id="@+id/searchEditText"
             android:textSize="20sp"
             />
@@ -28,7 +28,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="zoeken"
+            android:text="@string/zoeken"
             android:layout_weight="1"
             android:id="@+id/searchButton"
             />

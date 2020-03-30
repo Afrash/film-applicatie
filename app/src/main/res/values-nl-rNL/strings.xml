@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">film applicatie</string>
+
+    <string name="summary_text">Sammenvatting</string>
+    <string name="genre_text">Genre</string>
+    <string name="language_text">Taal</string>
+    <string name="eighteenPlus_text">18+</string>
+    <string name="releaseDate_text">Datum van publicatie</string>
+    <string name="rating_text">Beoordeling</string>
+
+    <string name="sortAlphabetically_text">Alphabetical</string>
+    <string name="sortMostPopular_text">Meest populair</string>
+    <string name="sortLeastPopular_text">Minst Populair</string>
+
+    <string name="navigation_drawer_open">Open navigatie </string>
+    <string name="navigation_drawer_close">Sluit navigatie </string>
+
+    <string name="add_review_button">Recensie </string>
+    <string name="add_toList_button">Toevoegen  </string>
+
+    <!-- Genres -->
+    <string name="genre_action">Actie</string>
+    <string name="genre_animation">Animatie</string>
+    <string name="genre_comedy">Comedie</string>
+    <string name="genre_crime">Misdaad</string>
+    <string name="genre_drama">Drama</string>
+    <string name="genre_family">Familie</string>
+    <string name="genre_fantasy">Fantasie</string>
+    <string name="genre_historical">Historisch</string>
+    <string name="genre_horror">Horror</string>
+    <string name="genre_mystery">Mysterieus</string>
+    <string name="genre_romance" translatable="false">Romantiek</string>
+    <string name="genre_science_fiction" translatable="false">Science Fiction</string>
+    <string name="genre_thriller" translatable="false">Thriller</string>
+    <string name="genre_western" translatable="false">Westers</string>
+    <string name="zoekenId">zoeken</string>
+    <string name="plaats_hier_je_review">Plaats hier je review</string>
+    <string name="schrijf_hier_je_review">Schrijf hier je review</string>
+    <string name="give_rating">Geef beoordeling</string>
+    <string name="add_to_list">Voeg toe aan de lijst </string>
+    <string name="back_to_startscreen">Terug naar startscherm</string>
+    <string name="testuser">TestGebruiker</string>
+    <string name="1234578">1234578</string>
+    <string name="home">Home</string>
+    <string name="movies">Films</string>
+    <string name="list">Lijst</string>
+</resources>
