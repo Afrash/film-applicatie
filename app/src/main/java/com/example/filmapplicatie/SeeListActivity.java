@@ -1,10 +1,8 @@
 package com.example.filmapplicatie;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,13 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.example.filmapplicatie.database.SQLiteDatabaseHandler;
-import com.example.filmapplicatie.movie.MovieAdapter;
-import com.example.filmapplicatie.movie.Movie_Fragment;
 import com.example.filmapplicatie.review.Review;
 import com.example.filmapplicatie.review.SeeOnClickHandler;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,14 +49,6 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
 //        review = (EditText) findViewById(R.id.showReview);
 //        rating = (EditText) findViewById(R.id.showRating) ;
 //
-        Intent i = getIntent();
-
-        String movieText = i.getExtras().getString("MOVIE");
-        String reviewText = i.getExtras().getString("REVIEW");
-        String ratingText = i.getExtras().getString("RATING");
-        Log.i(TAG, "This is in the intent: " + movieText);
-        Log.i(TAG, "This is in the intent: " + reviewText);
-        Log.i(TAG, "This is in the intent: " + ratingText);
 
         Log.i(TAG, "This is in the database: " + db.allReviews());
 //

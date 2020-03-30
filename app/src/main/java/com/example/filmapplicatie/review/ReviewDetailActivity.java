@@ -32,9 +32,6 @@ public class ReviewDetailActivity extends AppCompatActivity {
 
         db = new SQLiteDatabaseHandler(this);
 
-
-
-
         title = (TextView) findViewById(R.id.Movie_title_id);
         add = (Button) findViewById(R.id.review_detail_button_id);
         review2 = (EditText) findViewById(R.id.review_detail_editText_id);
