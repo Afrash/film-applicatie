@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.filmapplicatie.database.SQLiteDatabaseHandler;
 import com.example.filmapplicatie.movie.MovieAdapter;
 import com.example.filmapplicatie.movie.Movie_Fragment;
 import com.example.filmapplicatie.review.Review;
@@ -36,6 +37,9 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
     private EditText review;
     private EditText rating;
 
+    //make database
+    SQLiteDatabaseHandler db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //TODO recyclerview van maken om alles van database te weergeven, dus recyclerview met een detailactivityview zodat we alle data kunnen weergeven.
@@ -44,6 +48,7 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
 
         startScreen = (Button) findViewById(R.id.startscreen);
 
+        db = new SQLiteDatabaseHandler(this);
 
 //        movie = (EditText) findViewById(R.id.seeMovieTitle);
 //        review = (EditText) findViewById(R.id.showReview);
@@ -57,12 +62,15 @@ public class SeeListActivity extends AppCompatActivity implements SeeOnClickHand
         Log.i(TAG, "This is in the intent: " + movieText);
         Log.i(TAG, "This is in the intent: " + reviewText);
         Log.i(TAG, "This is in the intent: " + ratingText);
+
+        Log.i(TAG, "This is in the database: " + db.allReviews());
 //
 //        movie.setText(movieText);
 //        review.setText(reviewText);
 //        rating.setText(ratingText);
 //
         ArrayList<Review> reviews = new ArrayList<>();
+
 
 
         reviews.add(new Review(movieText, reviewText, ratingText));

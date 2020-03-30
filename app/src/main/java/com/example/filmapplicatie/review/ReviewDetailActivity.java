@@ -51,6 +51,7 @@ public class ReviewDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Review review = new Review(title.getText().toString(), review2.getText().toString(), rating.getText().toString());
                 db.addReviews(review);
+                Log.i(TAG, "This is in the database: " + db.allReviews());
 
                 Intent i = new Intent(getApplicationContext(), SeeListActivity.class);
                 i.putExtra("MOVIE", review.getMovie());
