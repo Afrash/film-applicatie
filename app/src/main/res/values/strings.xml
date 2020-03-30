@@ -43,5 +43,7 @@
     <string name="zoeken">zoeken</string>
     <string name="_1234578">1234578</string>
     <string name="testuser">TestUser</string>
+    <string name="zoek_naar">Search for </string>
+
 
 </resources>
