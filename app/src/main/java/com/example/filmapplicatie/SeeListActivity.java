@@ -94,21 +94,20 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
+        //share button
         Log.i(TAG, "onOptionsItemSelected called");
         switch (item.getItemId()) {
             case R.id.share_button:
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.putExtra(Intent.EXTRA_TEXT, " " +
                         db.allReviews());
-                intent.putExtra(Intent.EXTRA_TEXT, " " +
-                        db.allReviews());
+//                intent.putExtra(Intent.EXTRA_TEXT, " " +
+//                        db.allReviews());
 
+                intent.putExtra(Intent.EXTRA_TITLE, "Send reviews");
 
                 intent.setType("text/plain");
                 getActivity().startActivity(Intent.createChooser(intent,"export"));
-
-
 
                 // do stuff, like showing settings fragment
                 break;
