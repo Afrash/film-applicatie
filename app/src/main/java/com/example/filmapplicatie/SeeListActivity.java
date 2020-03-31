@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
@@ -65,13 +66,15 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
         //check of arraylist changed.
         mAdapter.notifyDataSetChanged();
 
-        return rootview;
+      return rootview;
     }
+
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.genre_menu, menu);
         return;
     }
+
 
     @Override
     public void onReviewClick(View view, int itemIndex) {

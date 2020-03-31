@@ -61,7 +61,7 @@ public class ReviewDetailActivity extends AppCompatActivity {
 
 
                 Log.i(TAG, "go to next activity ");
-                startActivity(i);
+
 
             }
         });
