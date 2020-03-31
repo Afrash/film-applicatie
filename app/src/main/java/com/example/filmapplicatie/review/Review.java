@@ -42,9 +42,9 @@ public class Review {
 
     @Override
     public String toString() {
-        return "Reviews in movies: " +
-                " Movie name = " + movie +
+        return " Movie name = " + movie +
                 " Review = " + review  +
                 " Rating= " + rating;
+
     }
 }
