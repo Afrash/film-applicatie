@@ -52,6 +52,8 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
         View rootview = inflater.inflate(R.layout.activity_see_list, container, false);
         db = new SQLiteDatabaseHandler(getContext());
 
+
+
         Log.i(TAG, "This is in the database: " + db.allReviews());
         List<Review> reviews;
         Toolbar toolbar =  rootview.findViewById(R.id.toolbar);
@@ -99,6 +101,10 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.putExtra(Intent.EXTRA_TEXT, " " +
                         db.allReviews());
+                intent.putExtra(Intent.EXTRA_TEXT, " " +
+                        db.allReviews());
+
+
                 intent.setType("text/plain");
                 getActivity().startActivity(Intent.createChooser(intent,"export"));
 
