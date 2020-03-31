@@ -4,7 +4,7 @@
     android:layout_height="130dp"
     android:orientation="horizontal"
     android:id="@+id/drink_list_item"
-    android:background="@drawable/background"
+    android:background="@drawable/bg2"
     >
 
 
