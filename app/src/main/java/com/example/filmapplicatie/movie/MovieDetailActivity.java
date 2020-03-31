@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.filmapplicatie.R;
 import com.example.filmapplicatie.review.ReviewDetailActivity;
+import com.example.filmapplicatie.review.ReviewList;
 import com.squareup.picasso.Picasso;
 
 public class MovieDetailActivity extends AppCompatActivity {
@@ -106,4 +107,6 @@ public class MovieDetailActivity extends AppCompatActivity {
         });
 
     }
+
+
 }

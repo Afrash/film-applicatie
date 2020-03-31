@@ -51,8 +51,7 @@ public class Movie_Fragment extends Fragment implements View.OnClickListener, Ne
        View rootview = inflater.inflate(R.layout.activity_movies, container, false);
         searchEditText = (EditText) rootview.findViewById(R.id.searchEditText);
         searchButton = (Button) rootview.findViewById(R.id.searchButton);
-        searchButton.setOnClickListener(this);
-
+        searchButton.setOnClickListener(this);;
         setHasOptionsMenu(true);
 
         String url = "https://api.themoviedb.org/3/discover/movie?api_key=b6f53c81e5115a4f1b13c9f2e25785a0";

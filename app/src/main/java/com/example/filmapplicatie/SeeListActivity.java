@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +26,10 @@ import com.example.filmapplicatie.movie.Movie_Fragment;
 import com.example.filmapplicatie.review.Review;
 import com.example.filmapplicatie.review.SeeOnClickHandler;
 
+import org.w3c.dom.Document;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,8 +41,10 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
     private RecyclerView.LayoutManager mLayoutManager;
     private Button startScreen;
     private boolean isChecked = false;
+    private ArrayList<Review> reviews;
     //make database
     SQLiteDatabaseHandler db;
+    private Context context;
 
     @Nullable
     @Override
@@ -88,12 +96,24 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
         Log.i(TAG, "onOptionsItemSelected called");
         switch (item.getItemId()) {
             case R.id.share_button:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT, " " +
+                        db.allReviews());
+                intent.setType("text/plain");
+                getActivity().startActivity(Intent.createChooser(intent,"export"));
+
+
+
                 // do stuff, like showing settings fragment
-                Log.d(TAG,"called");
-               break;
+                break;
+        } switch (item.getItemId()) {
+            case R.id.delete_button:
+                db.removeReviews();
+               getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SeeListActivity()).commit();
+                break;
         }
         return super.onOptionsItemSelected(item);
-
 
     }
 

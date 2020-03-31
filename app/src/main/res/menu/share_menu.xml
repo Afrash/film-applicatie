@@ -9,5 +9,10 @@
         android:title="Share"
         android:checkable="false">
     </item>
+    <item
+        android:id="@+id/delete_button"
+        android:title="Remove reviews"
+        android:checkable="false">
+    </item>
 
     </menu>

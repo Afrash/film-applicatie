@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SeeListActivity"></activity>
-        <activity android:name=".review.ReviewDetailActivity" />
-        <activity android:name=".movie.MovieDetailActivity" />
+        <activity android:name=".review.ReviewDetailActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".movie.MovieDetailActivity"
+           />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
