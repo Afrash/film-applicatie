@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".movie.MovieDetailActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bg2">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#faf7f7">
+        android:background="@drawable/bg2">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

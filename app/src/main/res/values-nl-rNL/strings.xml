@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">film applicatie</string>
 
-    <string name="summary_text">Sammenvatting</string>
+    <string name="summary_text">Samenvatting</string>
     <string name="genre_text">Genre</string>
     <string name="language_text">Taal</string>
     <string name="eighteenPlus_text">18+</string>
