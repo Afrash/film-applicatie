@@ -93,8 +93,13 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
             case R.id.share_button:
                 // do stuff, like showing settings fragment
                 break;
+        } switch (item.getItemId()) {
+            case R.id.delete_button:
+                db.removeReviews();
+               getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SeeListActivity()).commit();
+                break;
         }
-
         return super.onOptionsItemSelected(item);
 
 
