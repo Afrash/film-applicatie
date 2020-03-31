@@ -43,6 +43,7 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
 
         Log.i(TAG, "This is in the database: " + db.allReviews());
         List<Review> reviews;
+        setHasOptionsMenu(true);
 
         //zet alle reviews van database in de arraylist.
         reviews = db.allReviews();
@@ -71,10 +72,17 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.genre_menu, menu);
+        inflater.inflate(R.menu.share_menu, menu);
         return;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Log.i(TAG, "onOptionsItemSelected called");
+
+        return super.onOptionsItemSelected(item);
+
+    }
 
     @Override
     public void onReviewClick(View view, int itemIndex) {

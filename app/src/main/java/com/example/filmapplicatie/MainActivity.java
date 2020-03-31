@@ -18,7 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     private static String TAG = MainActivity.class.getName();
-
+private boolean isMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        if (!isMain) {
+            return false;
+        }
         getMenuInflater().inflate(R.menu.film_menu, menu);
         return true;
     }
