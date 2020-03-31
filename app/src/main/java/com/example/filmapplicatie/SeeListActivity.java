@@ -24,6 +24,8 @@ import com.example.filmapplicatie.movie.Movie_Fragment;
 import com.example.filmapplicatie.review.Review;
 import com.example.filmapplicatie.review.SeeOnClickHandler;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,6 +37,7 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
     private RecyclerView.LayoutManager mLayoutManager;
     private Button startScreen;
     private boolean isChecked = false;
+    private ArrayList<Review> reviews;
     //make database
     SQLiteDatabaseHandler db;
 
@@ -89,9 +92,9 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
         switch (item.getItemId()) {
             case R.id.share_button:
                 // do stuff, like showing settings fragment
-                Log.d(TAG,"called");
-               break;
+                break;
         }
+
         return super.onOptionsItemSelected(item);
 
 
