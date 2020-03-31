@@ -53,7 +53,7 @@ getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 db.addReviews(review);
                 Log.i(TAG, "This is in the database: " + db.allReviews());
 
-                Intent i = new Intent(getApplicationContext(), SeeListActivity.class);
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 i.putExtra("MOVIE", review.getMovie());
                 i.putExtra("REVIEW", review.getReview());
                 i.putExtra("RATING", review.getRating());
@@ -61,7 +61,7 @@ getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
                 Log.i(TAG, "go to next activity ");
-
+                startActivity(i);
 
             }
         });
