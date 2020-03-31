@@ -2,6 +2,7 @@ package com.example.filmapplicatie;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -17,7 +18,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
 import com.example.filmapplicatie.database.SQLiteDatabaseHandler;
+import com.example.filmapplicatie.movie.Movie_Fragment;
 import com.example.filmapplicatie.review.Review;
 import com.example.filmapplicatie.review.SeeOnClickHandler;
 
@@ -43,7 +46,9 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
 
         Log.i(TAG, "This is in the database: " + db.allReviews());
         List<Review> reviews;
+        Toolbar toolbar =  rootview.findViewById(R.id.toolbar);
         setHasOptionsMenu(true);
+
 
         //zet alle reviews van database in de arraylist.
         reviews = db.allReviews();
@@ -73,14 +78,22 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.share_menu, menu);
-        return;
+        super.onCreateOptionsMenu(menu,inflater);
+
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Log.i(TAG, "onOptionsItemSelected called");
 
+        Log.i(TAG, "onOptionsItemSelected called");
+        switch (item.getItemId()) {
+            case R.id.share_button:
+                // do stuff, like showing settings fragment
+                Log.d(TAG,"called");
+               break;
+        }
         return super.onOptionsItemSelected(item);
+
 
     }
 
