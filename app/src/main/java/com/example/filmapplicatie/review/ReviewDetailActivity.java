@@ -29,7 +29,7 @@ public class ReviewDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_detail);
-
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         db = new SQLiteDatabaseHandler(this);
 
         title = (TextView) findViewById(R.id.Movie_title_id);
@@ -67,4 +67,6 @@ public class ReviewDetailActivity extends AppCompatActivity {
         });
 
     }
+
+
 }

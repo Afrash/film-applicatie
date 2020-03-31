@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +25,8 @@ import com.example.filmapplicatie.database.SQLiteDatabaseHandler;
 import com.example.filmapplicatie.movie.Movie_Fragment;
 import com.example.filmapplicatie.review.Review;
 import com.example.filmapplicatie.review.SeeOnClickHandler;
+
+import org.w3c.dom.Document;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -40,6 +44,7 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
     private ArrayList<Review> reviews;
     //make database
     SQLiteDatabaseHandler db;
+    private Context context;
 
     @Nullable
     @Override
@@ -91,6 +96,14 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
         Log.i(TAG, "onOptionsItemSelected called");
         switch (item.getItemId()) {
             case R.id.share_button:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT, " " +
+                        db.allReviews());
+                intent.setType("text/plain");
+                getActivity().startActivity(Intent.createChooser(intent,"export"));
+
+
+
                 // do stuff, like showing settings fragment
                 break;
         } switch (item.getItemId()) {
@@ -101,7 +114,6 @@ public class SeeListActivity extends Fragment implements SeeOnClickHandler {
                 break;
         }
         return super.onOptionsItemSelected(item);
-
 
     }
 
