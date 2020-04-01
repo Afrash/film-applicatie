@@ -81,6 +81,7 @@ public class Movie_Fragment extends Fragment implements View.OnClickListener, Ne
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.film_menu, menu);
         inflater.inflate(R.menu.genre_menu, menu);
         return;
     }
